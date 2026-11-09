@@ -73,6 +73,19 @@ ESTADO_BAJA = "baja"
 
 FORMATO_FECHA = "%Y-%m-%d"
 
+# Patrones (expresiones regulares) que debe cumplir el TEXTO completo.
+# Se usa [0-9] en vez de \d porque \d también acepta dígitos de otros
+# alfabetos (por ejemplo "٣"), y aquí solo valen los del 0 al 9.
+# Fecha: exactamente 4-2-2 cifras con guiones ("2022-3-5" no cumple).
+PATRON_FECHA = r"[0-9]{4}-[0-9]{2}-[0-9]{2}"
+# Precio: cifras, y opcionalmente un punto seguido de más cifras.
+# Vale "1500" y "1500.50"; no vale "1500,50", "-3", "abc", "nan" ni "inf".
+PATRON_PRECIO = r"[0-9]+(\.[0-9]+)?"
+# Cada una de las partes de una IP: de 1 a 3 cifras.
+PATRON_PARTE_IP = r"[0-9]{1,3}"
+IP_NUM_PARTES = 4
+IP_VALOR_MAXIMO = 255
+
 # Columnas extra que se añaden a cada fila en errores.csv
 COLUMNAS_EXTRA_ERRORES = ("linea_csv", "codigo_error", "motivo")
 
