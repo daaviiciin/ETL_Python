@@ -1,0 +1,22 @@
+# --- Material privado (no se sube nunca) ---
+privado/
+CLAUDE.md
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# --- Salidas generadas por el programa ---
+# La carpeta salida/ se entrega vacía: ignoramos su contenido
+# pero conservamos .gitkeep para que Git mantenga la carpeta.
+salida/*
+!salida/.gitkeep
+
+# --- Editores / sistema ---
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
