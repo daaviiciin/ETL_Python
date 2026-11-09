@@ -1,0 +1,19 @@
+id_equipo,hostname,tipo,marca_modelo,sistema_operativo,version_so,direccion_ip,departamento,usuario_asignado,fecha_compra,fin_garantia,estado,precio_eur
+EQ-0001,ADB-LT-0001,portatil,Dell Latitude 5420,Windows,7,10.4.102.165,HR,,2018-07-15,2019-07-15,activo,1988.94
+EQ-0002,ADB-MB-0002,movil,Google Pixel 8,Android,11,,Creative Cloud,Javier Moreno,2022-06-10,2023-06-10,almacen,747.73
+EQ-0003,ADB-MB-0003,movil,Apple iPhone 14,iOS,15,,Marketing,Lucía Pérez,2020-10-18,2021-10-18,activo,433.72
+EQ-0004,ADB-SV-0004,servidor,Dell PowerEdge R650,Ubuntu Server,22.04,10.8.73.143,Customer Support,,2022-02-12,2027-02-11,reparacion,5484.73
+EQ-0005,ADB-SV-0005,servidor,Dell PowerEdge R650,Windows Server,2022,10.6.243.165,Legal,,2024-09-27,2029-09-26,activo,6174.13
+EQ-0006,ADB-LT-0006,portatil,Apple MacBook Air M2,macOS,12,10.4.88.63,HR,Diego Navarro,2022-09-20,2024-09-19,activo,1384.07
+EQ-0007,ADB-LT-0007,portatil,Apple MacBook Pro 14,macOS,14,10.2.42.239,Marketing,Laura Ruiz,2024-05-16,2022-12-30,activo,1121.32
+EQ-0008,ADB-MB-0008,tablet,Google Pixel 8,iOS,17,,Finance,Hugo López,2024-11-23,2026-11-23,activo,485.60
+EQ-0009,ADB-LT-0009,portatil,,Windows,11,10.8.181.39,Customer Support,Marta Ruiz,2022-11-30,2025-11-29,activo,1634.03
+EQ-0010,ADB-DT-0010,sobremesa,Lenovo ThinkCentre M70,Windows,8.1,10.1.165.214,Engineering,Carlos García,2020-08-25,2022-08-25,reparacion,0
+EQ-0011,ADB-MB-0011,movil,Apple iPhone 15,iOS,16,,Customer Support,Andrés Ortega,2022-3-5,2021-10-14,almacen,742.98
+EQ-0012,ADB-LT-0012,portatil,Apple MacBook Pro 14,macOS,14,10.2.183.238,Marketing,Irene Romero,2023-11-19,2026-11-18,activo,992.96
+EQ-0013,ADB-LT-0013,portatil,HP EliteBook 840,Windows,10,10.1.167.94,Engineering,Marta Ruiz,2023-11-03,2026-11-02,activo,1629.81
+EQ-0014,ADB-DT-0014,sobremesa,HP EliteDesk 800,Windows,10,10.2.190.83,Marketing,Irene Díaz,2020-04-01,2021-04-01,activo,1329.22
+EQ-0015,ADB-SV-0015,servidor,Lenovo ThinkSystem SR650,Windows Server,2022,10.6.200.230,Legal,,2022-10-16,2026-10-15,almacen,6153.15
+EQ-0016,ADB-LT-0016,portatil,Apple MacBook Air M2,macOS,11,10.2.190.83,Creative Cloud,Sergio Romero,2019-04-21,2021-04-20,activo,2463.11
+EQ-0017,ADB-DT-0017,sobremesa,Dell OptiPlex 7090,Windows,7,10.5.253.108,Sales,Sofía Jiménez,2018-11-01,2020-10-31,almacen,1102.91
+EQ-0003,ADB-MB-0018,movil,Google Pixel 8,Android,12,,HR,Lucía Romero,2021-01-20,2022-01-20,activo,500.46

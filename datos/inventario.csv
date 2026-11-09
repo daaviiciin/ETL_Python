@@ -1,0 +1,301 @@
+id_equipo,hostname,tipo,marca_modelo,sistema_operativo,version_so,direccion_ip,departamento,usuario_asignado,fecha_compra,fin_garantia,estado,precio_eur
+EQ-0001,ADB-LT-0001,portatil,Apple MacBook Air M2,macOS,14,10.1.43.145,Engineering,Marta Ruiz,2026-07-26,2027-07-26,activo,1021.70
+EQ-0002,ADB-LT-0002,portatil,Dell Latitude 5420,Windows,10,10.4.161.139,HR,Pablo Vega,2026-01-23,2028-01-23,activo,1131.42
+EQ-0003,ADB-LT-0003,portatil,Apple MacBook Pro 14,macOS,13,10.3.243.137,Finance,,2022-12-08,2023-12-08,almacen,1134.70
+EQ-0004,ADB-LT-0004,portatil,Apple MacBook Air M2,macOS,13,10.5.144.52,Sales,Elena Pérez,2022-07-09,2025-07-08,activo,1634.84
+EQ-0005,ADB-SV-0005,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,18.04,10.1.196.218,Engineering,,2020-06-29,2024-06-28,activo,6212.99
+EQ-0006,ADB-LT-0006,portatil,Apple MacBook Pro 14,macOS,12,10.7.194.44,Creative Cloud,Pablo Sánchez,2021-03-25,2024-03-24,activo,2572.71
+EQ-0007,ADB-DT-0007,sobremesa,Apple iMac 24,macOS,13,10.5.102.51,Sales,Nuria Díaz,2024-04-22,2027-04-22,activo,807.79
+EQ-0008,ADB-DT-0008,sobremesa,HP EliteDesk 800,Windows,10,10.3.202.182,Finance,,2021-04-11,2024-04-10,activo,1048.34
+EQ-0009,ADB-LT-0009,portatil,HP EliteBook 840,Windows,10,10.5.146.190,Sales,Javier Vega,2021-02-25,2024-02-25,activo,2241.46
+EQ-0010,ADB-LT-0010,portatil,HP EliteBook 840,Windows,10,10.3.76.174,Finance,Irene García,2021-02-15,2023-02-15,activo,1803.72
+EQ-0011,ADB-LT-0011,portatil,Dell Latitude 5420,Windows,8.1,10.1.35.182,Engineering,Marta Gómez,2020-03-19,2023-03-19,activo,2582.39
+EQ-0012,ADB-DT-0012,sobremesa,HP EliteDesk 800,Windows,8.1,10.5.244.86,Sales,,2017-04-11,2018-04-11,reparacion,1874.71
+EQ-0013,ADB-DT-0013,sobremesa,Apple Mac mini M2,macOS,13,10.6.220.218,Legal,Javier Jiménez,2024-05-27,2027-05-27,activo,792.35
+EQ-0014,ADB-DT-0014,sobremesa,Dell OptiPlex 7090,Windows,10,10.8.99.160,Customer Support,Laura Sánchez,2021-01-14,2024-01-14,activo,1963.25
+EQ-0015,ADB-SV-0015,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,22.04,10.3.18.175,Finance,,2024-04-23,2027-04-23,baja,13463.73
+EQ-0016,ADB-LT-0016,portatil,Apple MacBook Pro 14,macOS,12,10.3.175.103,Finance,Nuria Sánchez,2022-03-04,2024-03-03,activo,1499.77
+EQ-0017,ADB-LT-0017,portatil,Lenovo ThinkPad T14,Ubuntu,18.04,10.5.192.7,Sales,,2018-12-08,2020-12-07,activo,1358.71
+EQ-0018,ADB-DT-0018,sobremesa,Apple iMac 24,macOS,11,10.4.196.232,HR,Elena Ruiz,2017-08-11,2020-08-10,activo,1180.30
+EQ-0019,ADB-LT-0019,portatil,Apple MacBook Pro 14,macOS,14,10.2.157.101,Marketing,Laura Díaz,2026-06-30,2027-06-30,activo,2591.26
+EQ-0020,ADB-LT-0020,portatil,Lenovo ThinkPad T14,Windows,10,10.2.141.7,Marketing,Andrés García,2020-12-24,2023-12-24,activo,1083.31
+EQ-0021,ADB-LT-0021,portatil,HP EliteBook 840,Windows,10,10.4.39.167,HR,Diego García,2024-11-30,2025-11-30,activo,2642.51
+EQ-0022,ADB-DT-0022,sobremesa,Lenovo ThinkCentre M70,Windows,10,10.5.103.148,Sales,Sergio Pérez,2021-02-03,2024-02-03,activo,1724.02
+EQ-0023,ADB-MB-0023,movil,Samsung Galaxy S23,iOS,15,10.2.22.116,Marketing,Lucía Gómez,2026-08-17,2027-08-17,activo,1002.45
+EQ-0024,ADB-LT-0024,portatil,Dell Latitude 5420,Windows,10,10.2.76.207,Marketing,Marta Jiménez,2020-02-16,2023-02-15,activo,1167.62
+EQ-0025,ADB-SV-0025,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,20.04,10.6.230.29,Legal,,2021-06-25,2024-06-24,activo,10894.54
+EQ-0026,ADB-LT-0026,portatil,Apple MacBook Pro 14,macOS,14,10.2.225.199,Marketing,Lucía Torres,2023-12-22,2026-12-21,almacen,2775.16
+EQ-0027,ADB-MB-0027,movil,Samsung Galaxy S23,Android,11,,Creative Cloud,Marta Ortega,2021-01-04,2022-01-04,baja,1148.72
+EQ-0028,ADB-DT-0028,sobremesa,HP EliteDesk 800,Windows,10,10.2.155.147,Marketing,Álvaro Castro,2025-06-17,2027-06-17,activo,710.41
+EQ-0029,ADB-LT-0029,portatil,Apple MacBook Air M2,macOS,10.15,10.7.155.175,Creative Cloud,Sergio Navarro,2019-07-31,2022-07-30,activo,1824.84
+EQ-0030,ADB-DT-0030,sobremesa,Apple Mac mini M2,macOS,13,10.5.25.43,Sales,Laura Gómez,2024-12-07,2025-12-07,activo,1071.85
+EQ-0031,ADB-MB-0031,movil,Apple iPhone 14,,16,10.3.141.18,Finance,Sergio López,2022-03-23,2024-03-22,activo,1202.32
+EQ-0032,ADB-LT-0032,portatil,HP EliteBook 840,Windows,7,10.3.128.253,Finance,Lucía Ruiz,2017-08-21,2018-08-21,almacen,1501.51
+EQ-0033,ADB-LT-0033,portatil,Lenovo ThinkPad T14,Windows,10,10.8.36.25,Customer Support,Marta Romero,2019-12-01,2022-11-30,activo,909.84
+EQ-0034,ADB-LT-0034,portatil,HP EliteBook 840,Windows,11,10.3.147.111,Finance,Elena López,2022-07-06,2023-07-06,activo,1793.75
+EQ-0035,ADB-DT-0035,sobremesa,HP EliteDesk 800,Windows,10,10.1.218.87,Engineering,Carlos López,2020-07-16,2021-07-16,activo,897.12
+EQ-0036,ADB-LT-0036,portatil,Apple MacBook Pro 14,macOS,10.15,10.7.15.33,Creative Cloud,Sergio Moreno,2018-08-19,2019-08-19,activo,2386.66
+EQ-0037,ADB-SV-0037,servidor,Dell PowerEdge R650,Ubuntu Server,18.04,300.12.4.5,Sales,,2021-11-08,2026-11-07,activo,8641.61
+EQ-0038,ADB-LT-0038,portatil,HP EliteBook 840,Windows,10,10.8.110.73,Customer Support,Sofía Gómez,2023-02-09,2026-02-08,activo,1079.70
+EQ-0039,ADB-LT-0039,portatil,Lenovo ThinkPad T14,Windows,10,10.6.199.116,Legal,Hugo López,2025-01-28,2027-01-28,activo,946.22
+EQ-0040,ADB-LT-0040,portatil,Dell Latitude 5420,Windows,11,10.6.254.63,Legal,,2022-03-04,2023-03-04,activo,1926.50
+EQ-0041,ADB-MB-0041,movil,Samsung Galaxy S23,iOS,16,,HR,Laura García,2024-09-30,2023-09-02,activo,872.21
+EQ-0042,ADB-LT-0042,portatil,Lenovo ThinkPad T14,Windows,10,10.2.218.136,Marketing,,2022-08-07,2025-08-06,activo,2221.80
+EQ-0043,ADB-LT-0043,portatil,Lenovo ThinkPad T14,Windows,11,10.6.114.77,Legal,Paula Ruiz,2023-07-16,2024-07-15,activo,1053.18
+EQ-0044,ADB-MB-0044,movil,Google Pixel 8,Android,14,,Legal,Pablo Sánchez,2022-06-28,2023-06-28,activo,1241.98
+EQ-0045,ADB-DT-0045,sobremesa,HP EliteDesk 800,Windows,10,10.2.120.128,Marketing,Andrés Díaz,2023-12-03,2026-12-02,reparacion,1054.81
+EQ-0046,ADB-DT-0046,sobremesa,Lenovo ThinkCentre M70,Windows,10,10.4.69.122,HR,Sofía Vega,2017-06-10,2019-06-10,baja,1708.41
+EQ-0047,ADB-LT-0047,portatil,Dell Latitude 5420,Windows,11,10.6.28.143,Legal,Andrés Sánchez,2026-07-16,2028-07-15,reparacion,1434.40
+EQ-0048,ADB-MB-0048,movil,Apple iPhone 15,iOS,15,,Creative Cloud,Paula Pérez,2023-09-24,2025-09-23,activo,730.89
+EQ-0049,ADB-LT-0049,portatil,Dell Latitude 5420,Windows,11,10.5.34.170,Sales,Álvaro Ruiz,2024-03-05,2026-03-05,activo,1156.93
+EQ-0032,ADB-DT-0050,sobremesa,HP EliteDesk 800,Windows,10,10.5.177.209,Sales,Nuria Moreno,2018-08-07,2021-08-06,activo,1168.59
+EQ-0051,ADB-LT-0051,portatil,Apple MacBook Pro 14,macOS,13,10.4.133.253,HR,,2023-12-03,2026-12-02,baja,1671.28
+EQ-0036,ADB-LT-0052,portatil,Dell Latitude 5420,Windows,10,10.4.213.13,HR,,2021-09-03,2023-09-03,activo,1080.33
+EQ-0053,ADB-DT-0053,sobremesa,Lenovo ThinkCentre M70,Windows,10,10.8.36.196,Customer Support,Marta Gómez,2020-07-10,2021-07-10,activo,1205.36
+EQ-0054,ADB-DT-0054,sobremesa,Dell OptiPlex 7090,Windows,10,10.8.123.155,Customer Support,Andrés Moreno,2024-11-14,2026-11-14,activo,1205.88
+EQ-0015,ADB-DT-0055,sobremesa,Dell OptiPlex 7090,Windows,7,10.5.190.162,Sales,Pablo Navarro,2017-09-05,2018-09-05,baja,807.28
+EQ-0056,ADB-LT-0056,portatil,HP EliteBook 840,Windows,10,10.4.35.76,HR,Paula Jiménez,2019-02-20,2021-02-19,activo,2024.05
+EQ-0057,ADB-LT-0057,portatil,Dell Latitude 5420,Windows,10,10.5.97.91,Sales,Laura Navarro,2020-11-12,2022-11-12,reparacion,2209.95
+EQ-0058,ADB-LT-0058,portatil,Lenovo ThinkPad T14,Windows,11,10.8.132.238,Customer Support,Álvaro Martín,2024-12-06,2026-12-06,baja,1248.89
+EQ-0059,ADB-DT-0059,sobremesa,HP EliteDesk 800,Ubuntu,18.04,10.5.102.51,Customer Support,Javier Gómez,2018-05-10,2021-05-09,activo,893.99
+EQ-0060,ADB-LT-0060,portatil,HP EliteBook 840,Windows,10,10.1.100.107,Engineering,Diego Gómez,2025-06-13,2027-06-13,activo,2428.59
+EQ-0061,ADB-MB-0061,movil,Samsung Galaxy S23,iOS,16,,Creative Cloud,Nuria Sánchez,2020-01-03,2022-01-02,activo,430.07
+EQ-0062,ADB-MB-0062,movil,Apple iPhone 15,iOS,16,,Finance,Nuria Castro,2022-3-5,2023-11-28,activo,1201.50
+EQ-0063,ADB-SV-0063,servidor,Lenovo ThinkSystem SR650,Windows Server,2022,10.8.78.29,Customer Support,,2023-11-22,2026-11-21,activo,7540.21
+EQ-0064,ADB-MB-0064,movil,Apple iPhone 15,iOS,17,,Marketing,Hugo García,2019-12-02,2021-12-01,almacen,604.19
+EQ-0065,ADB-SV-0065,servidor,Dell PowerEdge R650,Windows Server,2022,10.5.75.8,Sales,,2017-07-04,2021-07-03,baja,5838.14
+EQ-0066,ADB-DT-0066,sobremesa,Lenovo ThinkCentre M70,Ubuntu,20.04,10.5.38.201,Sales,Marta Jiménez,2021-01-14,2023-01-14,activo,1979.21
+EQ-0067,ADB-LT-0067,portatil,HP EliteBook 840,Windows,11,10.8.13.204,Customer Support,Hugo Navarro,2023-10-29,2026-10-28,activo,1325.36
+EQ-0068,ADB-DT-0068,sobremesa,Apple iMac 24,macOS,11,10.7.237.102,Creative Cloud,Pablo Ruiz,2019-12-16,2021-12-15,activo,1856.25
+EQ-0069,ADB-LT-0069,portatil,Lenovo ThinkPad T14,Windows,11,10.2.87.179,Marketing,Irene Ortega,2022-03-31,2025-03-30,reparacion,1579.01
+EQ-0070,ADB-LT-0070,portatil,Dell Latitude 5420,Windows,11,10.6.169.50,Legal,Álvaro Gómez,2026-05-17,2027-05-17,activo,1032.75
+EQ-0071,ADB-SV-0071,servidor,HP ProLiant DL380,Windows Server,2022,10.7.136.161,Creative Cloud,,2023-09-22,2027-09-21,activo,6741.53
+EQ-0072,ADB-DT-0072,sobremesa,Apple iMac 24,macOS,10.15,10.3.95.207,Finance,,2019-04-03,2022-04-02,activo,1541.56
+EQ-0073,ADB-MB-0073,movil,Samsung Galaxy S23,iOS,15,10.8.132.238,Finance,Laura Martín,2026-01-16,2028-01-16,activo,557.98
+EQ-0074,ADB-MB-0074,movil,Google Pixel 8,iOS,17,,Finance,Paula Vega,2024-01-05,2025-01-04,activo,401.48
+EQ-0075,ADB-MB-0075,movil,Apple iPhone 15,iOS,17,10.8.124.139,Customer Support,Lucía Romero,2024-04-16,2025-04-16,baja,756.41
+EQ-0076,ADB-MB-0076,movil,Apple iPhone 15,iOS,15,10.8.205.72,Customer Support,Pablo Pérez,2023-02-12,2025-02-11,activo,619.47
+EQ-0077,ADB-SV-0077,servidor,Dell PowerEdge R650,Windows Server,2016,10.3.159.249,Finance,,2023-10-31,2027-10-30,activo,8670.74
+EQ-0078,ADB-SV-0078,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,20.04,10.8.147.58,Customer Support,,2021-12-24,2025-12-23,activo,9065.30
+EQ-0079,ADB-MB-0079,movil,Samsung Galaxy S23,iOS,16,10.6.108.21,Legal,Sergio López,2017-02-22,2019-02-22,reparacion,954.19
+EQ-0080,ADB-MB-0080,movil,Apple iPhone 15,iOS,17,,Sales,Javier Ruiz,2017-03-12,2018-03-12,activo,1075.87
+EQ-0081,ADB-MB-0081,movil,Samsung Galaxy S23,Android,13,,Customer Support,Pablo Díaz,2019-02-12,2020-02-12,baja,745.71
+EQ-0082,ADB-DT-0082,sobremesa,Dell OptiPlex 7090,Windows,10,10.3.234.152,Finance,Irene Martín,2018-10-24,2021-10-23,activo,1109.88
+EQ-0083,ADB-MB-0083,movil,Google Pixel 8,iOS,16,10.8.206.103,Customer Support,Marta Sánchez,2026-08-30,2028-08-29,activo,822.49
+EQ-0084,ADB-LT-0084,portatil,Lenovo ThinkPad T14,Windows,10,10.8.93.143,Customer Support,Hugo Ruiz,2025-05-31,2026-05-31,activo,1128.10
+EQ-0085,ADB-LT-0085,portatil,Apple MacBook Pro 14,macOS,15,10.7.115.8,Creative Cloud,Irene Torres,2026-04-11,2027-04-11,almacen,2428.60
+EQ-0086,ADB-LT-0086,portatil,HP EliteBook 840,Windows,11,10.7.19.223,Creative Cloud,Nuria Navarro,2024-04-10,2025-04-10,activo,2157.05
+EQ-0087,ADB-LT-0087,portatil,HP EliteBook 840,Windows,11,10.8.212.183,Customer Support,Irene López,2026-07-23,2029-07-22,activo,1773.56
+EQ-0088,ADB-SV-0088,servidor,Dell PowerEdge R650,Windows Server,2022,10.3.204.132,Finance,,2025-09-01,2030-08-31,activo,6374.31
+EQ-0089,ADB-LT-0089,portatil,Dell Latitude 5420,Windows,11,10.5.141.180,Sales,Nuria Jiménez,2024-08-28,2025-08-28,activo,2035.45
+EQ-0090,ADB-MB-0090,movil,Google Pixel 8,iOS,16,,Finance,Carlos Martín,2018-08-17,2020-08-16,activo,413.06
+EQ-0091,ADB-LT-0091,portatil,Lenovo ThinkPad T14,Windows,11,10.8.243.40,Customer Support,Elena Martín,2026-05-03,2027-05-03,activo,2285.24
+EQ-0092,ADB-MB-0092,movil,Apple iPhone 15,iOS,16,,Finance,Irene López,2023-07-12,2025-07-11,activo,900.49
+EQ-0093,ADB-SV-0093,servidor,HP ProLiant DL380,Windows Server,2016,10.8.110.73,HR,,2024-06-18,2029-06-17,activo,11682.09
+EQ-0094,ADB-MB-0094,movil,Apple iPhone 15,iOS,16,,Creative Cloud,Diego García,2022-02-02,2024-02-02,activo,413.08
+EQ-0095,ADB-LT-0095,portatil,HP EliteBook 840,Windows,11,10.8.149.245,Customer Support,Andrés Ortega,2025-02-11,2026-02-11,reparacion,2272.46
+EQ-0096,ADB-DT-0096,sobremesa,Apple Mac mini M2,macOS,13,10.2.82.92,Marketing,Sofía Gómez,2022-02-11,2025-02-10,activo,1118.30
+EQ-0097,ADB-SV-0097,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,18.04,10.6.63.70,Legal,,2019-05-08,2022-05-07,activo,6670.10
+EQ-0098,ADB-MB-0098,movil,Google Pixel 8,Android,12,,Legal,Javier Castro,2017-12-16,2019-12-16,activo,843.85
+EQ-0099,ADB-LT-0099,portatil,Lenovo ThinkPad T14,Windows,11,10.4.139.202,HR,Nuria García,2022-04-05,2023-04-05,activo,2213.98
+EQ-0100,ADB-MB-0100,movil,Apple iPhone 14,iOS,17,,Marketing,Carlos Navarro,2018-07-19,2020-07-18,activo,685.76
+EQ-0101,ADB-MB-0101,movil,Apple iPhone 14,iOS,16,,Creative Cloud,,2022-12-03,2024-12-02,activo,920.78
+EQ-0102,ADB-MB-0102,movil,Samsung Galaxy S23,iOS,16,10.8.190.95,Customer Support,Andrés Torres,2018-04-26,2019-04-26,activo,1081.58
+EQ-0103,ADB-DT-0103,sobremesa,Apple Mac mini M2,macOS,13,10.7.171.33,Creative Cloud,Lucía Pérez,2021-10-08,2022-10-08,activo,1630.13
+EQ-0104,ADB-SV-0104,servidor,HP ProLiant DL380,Windows Server,2019,10.7.61.227,Creative Cloud,,2021-07-23,2025-07-22,activo,5335.14
+EQ-0105,ADB-LT-0105,portatil,Lenovo ThinkPad T14,Windows,11,10.4.104.251,HR,Marta Gómez,2023-05-10,2026-05-09,activo,1556.20
+EQ-0106,ADB-SV-0106,servidor,HP ProLiant DL380,Windows Server,2019,10.5.96.158,Sales,,2026-01-23,2030-01-22,baja,10077.90
+EQ-0107,ADB-MB-0107,movil,Samsung Galaxy S23,iOS,17,,Marketing,Álvaro Jiménez,2021-07-17,2022-07-17,activo,853.21
+EQ-0108,ADB-LT-0108,portatil,Apple MacBook Air M2,macOS,10.15,10.2.116.92,Marketing,Álvaro Martín,2017-10-25,2019-10-25,activo,1247.32
+EQ-0109,ADB-LT-0109,portatil,Apple MacBook Air M2,macOS,15,10.4.70.29,HR,Carlos Martín,2025-09-26,2026-09-26,activo,2102.99
+EQ-0110,ADB-LT-0110,portatil,HP EliteBook 840,Windows,10,10.5.25.252,Sales,Laura Díaz,2020-02-10,2023-02-09,activo,1110.55
+EQ-0111,ADB-DT-0111,sobremesa,Dell OptiPlex 7090,Windows,10,10.2.64.176,Marketing,Irene Martín,2020-08-04,2022-08-04,activo,1867.70
+EQ-0112,ADB-LT-0112,portatil,Dell Latitude 5420,Windows,10,10.4.240.37,HR,Álvaro García,2019-08-15,2020-08-14,activo,1983.05
+EQ-0113,ADB-LT-0113,portatil,Dell Latitude 5420,Windows,11,10.6.182.102,Legal,Diego García,2026-07-23,2029-07-22,activo,1033.85
+EQ-0114,ADB-MB-0114,movil,Apple iPhone 15,iOS,15,,Customer Support,Irene Díaz,2026-08-19,2027-08-19,activo,1054.93
+EQ-0115,ADB-LT-0115,portatil,Apple MacBook Pro 14,macOS,14,10.3.101.82,Finance,Javier Pérez,2025-03-11,2026-03-11,baja,1220.46
+EQ-0116,ADB-LT-0116,portatil,HP EliteBook 840,Windows,11,10.7.118.191,Creative Cloud,Sofía Ruiz,2023-12-27,2025-12-26,activo,1624.81
+EQ-0117,ADB-MB-0117,movil,Samsung Galaxy S23,Android,11,10.7.112.90,Creative Cloud,Paula Jiménez,2026-07-16,2027-07-16,activo,1176.99
+EQ-0118,ADB-MB-0118,movil,Samsung Galaxy S23,Android,13,,Legal,Sofía Pérez,2021-01-13,2022-01-13,activo,460.32
+EQ-0119,ADB-LT-0119,portatil,Apple MacBook Pro 14,macOS,13,10.3.31.82,Finance,,2024-12-25,2026-12-25,activo,1675.74
+EQ-0120,ADB-LT-0120,portatil,Apple MacBook Air M2,macOS,14,10.2.88.88,Marketing,Sergio García,2025-12-15,2026-12-15,almacen,1883.29
+EQ-0121,ADB-SV-0121,servidor,HP ProLiant DL380,Windows Server,2016,10.1.164.60,Engineering,,2017-07-09,2022-07-08,activo,6968.85
+EQ-0122,ADB-SV-0122,servidor,Dell PowerEdge R650,Windows Server,2022,10.1.211.46,Engineering,,2019-04-08,2024-04-06,activo,8804.33
+EQ-0123,ADB-LT-0123,portatil,Apple MacBook Pro 14,macOS,11,10.2.215.224,Marketing,Marta Gómez,2017-01-09,2020-01-09,baja,1877.19
+EQ-0124,ADB-DT-0124,sobremesa,Dell OptiPlex 7090,Windows,11,10.5.49.175,Sales,Paula Moreno,2023-05-15,2024-05-14,activo,837.33
+EQ-0125,ADB-LT-0125,portatil,HP EliteBook 840,Windows,10,10.5.40.225,Sales,Elena Castro,2021-04-28,2023-04-28,activo,1905.19
+EQ-0126,ADB-LT-0126,portatil,Apple MacBook Pro 14,macOS,14,10.8.173.123,Customer Support,Irene García,2026-07-13,2029-07-12,activo,1239.84
+EQ-0127,ADB-LT-0127,portatil,Lenovo ThinkPad T14,Windows,11,10.4.157.131,HR,,2026-07-01,2028-06-30,activo,1037.44
+EQ-0128,ADB-MB-0128,movil,Apple iPhone 15,iOS,16,,Marketing,Sofía Castro,2018-07-29,2020-07-28,almacen,734.58
+EQ-0129,ADB-LT-0129,portatil,HP EliteBook 840,Windows,10,10.5.167.39,Sales,Andrés Ruiz,2021-03-13,2023-03-13,activo,2415.28
+EQ-0130,ADB-MB-0130,movil,Google Pixel 8,Android,13,,Engineering,Diego Navarro,2026-05-10,2027-05-10,activo,852.25
+EQ-0131,ADB-LT-0131,portatil,Lenovo ThinkPad T14,Windows,10,10.2.104.115,Marketing,Diego Sánchez,2025-08-20,2026-08-20,activo,1867.23
+EQ-0132,ADB-LT-0132,portatil,Lenovo ThinkPad T14,Windows,7,10.5.163.138,Sales,Marta Sánchez,2018-05-13,2020-05-12,almacen,1397.73
+EQ-0133,ADB-DT-0133,sobremesa,Lenovo ThinkCentre M70,Windows,11,10.5.14.99,Sales,Lucía Pérez,2024-12-26,2026-12-26,activo,768.11
+EQ-0134,ADB-MB-0134,movil,Apple iPhone 14,iOS,16,,Sales,Hugo Romero,2023-11-26,2025-11-25,activo,642.45
+EQ-0135,  ,portatil,Lenovo ThinkPad T14,Windows,10,10.3.98.40,Finance,Pablo Navarro,2020-10-09,2023-10-09,reparacion,2474.07
+EQ-0136,ADB-LT-0136,portatil,HP EliteBook 840,Windows,10,10.6.14.86,Legal,Carlos Martín,2026-01-07,2027-01-07,almacen,1494.38
+EQ-0137,ADB-MB-0137,movil,Apple iPhone 14,iOS,17,,HR,,2019-06-09,2020-06-08,activo,632.64
+EQ-0138,ADB-MB-0138,movil,Google Pixel 8,Android,11,,Marketing,Álvaro Castro,2024-11-14,2026-11-14,activo,789.57
+EQ-0139,ADB-DT-0139,sobremesa,Dell OptiPlex 7090,Ubuntu,20.04,10.5.210.150,Sales,Hugo Sánchez,2021-02-02,2023-02-02,activo,1435.38
+EQ-0140,ADB-SV-0140,servidor,HP ProLiant DL380,Ubuntu Server,22.04,10.6.212.229,Legal,,2024-12-09,2028-12-08,activo,8386.67
+EQ-0141,ADB-LT-0141,portatil,Dell Latitude 5420,Ubuntu,24.04,10.1.23.102,Engineering,Hugo Vega,2023-12-06,2026-12-05,activo,0
+EQ-0142,ADB-MB-0142,movil,Google Pixel 8,Android,13,,Engineering,Javier Gómez,2017-09-15,2018-09-15,reparacion,1038.68
+EQ-0143,ADB-LT-0143,portatil,Apple MacBook Pro 14,macOS,11,10.5.146.82,Sales,Carlos Díaz,2020-06-09,2023-06-09,activo,995.92
+EQ-0144,ADB-LT-0144,portatil,Lenovo ThinkPad T14,Windows,10,10.4.14.196,,Nuria López,2020-07-12,2021-07-12,baja,1190.13
+EQ-0145,ADB-LT-0145,portatil,Apple MacBook Air M2,macOS,13,10.7.205.53,Creative Cloud,Sofía Martín,2022-01-26,2023-01-26,activo,2084.27
+EQ-0146,ADB-LT-0146,portatil,,macOS,14,10.3.155.39,Finance,Pablo Ortega,2024-02-18,2027-02-17,reparacion,2346.34
+EQ-0147,ADB-LT-0147,portatil,Apple MacBook Pro 14,macOS,13,10.6.215.180,Legal,Diego Romero,2022-03-31,2023-03-31,activo,2687.40
+EQ-0148,ADB-DT-0148,sobremesa,Dell OptiPlex 7090,Windows,7,10.6.70.80,Legal,Elena Díaz,2017-07-16,2019-07-16,reparacion,1272.83
+EQ-0149,ADB-MB-0149,movil,Samsung Galaxy S23,iOS,16,10.1.74.49,Engineering,Irene Navarro,2022-06-27,2024-06-26,activo,522.29
+EQ-0150,ADB-LT-0150,portatil,HP EliteBook 840,Windows,10,10.3.129.48,Finance,Elena Vega,2017-11-20,2019-11-20,activo,2224.34
+EQ-0151,ADB-LT-0151,portatil,Lenovo ThinkPad T14,Windows,11,10.8.183.142,,Paula Romero,2022-12-20,2024-12-19,activo,2074.61
+EQ-0152,ADB-MB-0152,movil,Samsung Galaxy S23,Android,11,,HR,Javier Moreno,2026-01-02,2028-01-02,roto,838.81
+EQ-0153,ADB-LT-0153,portatil,Apple MacBook Pro 14,macOS,14,10.7.91.143,Creative Cloud,Javier Jiménez,2025-02-28,2028-02-28,activo,1106.05
+EQ-0154,ADB-LT-0154,portatil,Lenovo ThinkPad T14,Windows,11,10.3.240.62,Finance,Diego Martín,2022-09-15,2023-09-15,activo,1424.63
+EQ-0155,ADB-SV-0155,servidor,Lenovo ThinkSystem SR650,Windows Server,2022,10.7.55.203,Creative Cloud,,2025-01-30,2028-01-30,activo,11248.92
+EQ-0156,ADB-LT-0156,portatil,Lenovo ThinkPad T14,Windows,10,10.2.76.235,Marketing,Diego Moreno,2025-05-14,2028-05-13,reparacion,2063.50
+EQ-0157,ADB-LT-0157,portatil,HP EliteBook 840,Windows,11,10.8.8.104,Customer Support,Javier Castro,2025-04-25,2027-04-25,activo,1969.71
+EQ-0158,ADB-MB-0158,movil,Apple iPhone 14,iOS,15,,Legal,,2017-10-03,2018-10-03,activo,820.81
+EQ-0159,  ,portatil,HP EliteBook 840,Windows,11,10.7.135.75,Creative Cloud,Lucía Torres,2022-11-09,2023-11-09,activo,1286.80
+EQ-0160,ADB-LT-0160,,Apple MacBook Air M2,macOS,13,10.5.222.186,Sales,Nuria Navarro,2024-08-13,2025-08-13,activo,1194.44
+EQ-0161,ADB-LT-0161,portatil,Apple MacBook Pro 14,macOS,11,10.1.25.38,Engineering,,2020-06-05,2021-06-05,activo,1562.94
+EQ-0162,ADB-MB-0162,movil,Apple iPhone 15,iOS,15,,HR,Hugo Sánchez,ayer,2025-01-06,activo,635.62
+EQ-0163,ADB-MB-0163,movil,Apple iPhone 15,iOS,17,,Creative Cloud,Paula Pérez,2021-04-12,2023-04-12,activo,1084.22
+EQ-0164,ADB-SV-0164,servidor,,Windows Server,2016,10.3.80.148,Finance,,2020-03-15,2023-03-15,activo,10657.01
+EQ-0165,ADB-MB-0165,movil,Apple iPhone 15,iOS,16,10.4.26.53,HR,Marta Pérez,2021-10-17,2022-10-17,almacen,618.41
+EQ-0166,ADB-LT-0166,portatil,Apple MacBook Pro 14,macOS,15,10.2.138.143,Marketing,Sofía Díaz,2026-08-29,2029-08-28,activo,1425.67
+EQ-0167,ADB-DT-0167,sobremesa,Lenovo ThinkCentre M70,Windows,11,10.6.138.133,Legal,Paula García,2025-05-20,2027-05-20,activo,917.95
+EQ-0168,ADB-LT-0168,portatil,Apple MacBook Air M2,macOS,15,10.2.180.143,Marketing,Carlos López,2025-03-16,2027-03-16,baja,1099.66
+EQ-0169,ADB-LT-0169,portatil,Apple MacBook Air M2,macOS,10.15,10.6.250.179,Legal,Andrés Sánchez,2017-01-22,2020-01-22,activo,1905.45
+EQ-0170,ADB-LT-0170,portatil,Apple MacBook Air M2,macOS,13,10.2.205.130,Marketing,Pablo López,2023-06-11,2024-06-10,almacen,930.42
+EQ-0171,ADB-DT-0171,sobremesa,Apple iMac 24,macOS,12,10.3.244.139,Finance,Sofía Castro,2021-08-28,2024-08-27,activo,1002.14
+EQ-0172,ADB-LT-0172,portatil,Apple MacBook Air M2,macOS,14,10.0.0.-1,Sales,Nuria Navarro,2024-05-16,2025-05-16,almacen,1165.98
+EQ-0173,ADB-LT-0173,portatil,HP EliteBook 840,Windows,10,10.6.240.201,Legal,Javier Pérez,2021-09-07,2024-09-06,activo,1866.73
+EQ-0174,ADB-MB-0174,movil,Samsung Galaxy S23,iOS,15,,Customer Support,Javier Ruiz,2017-01-30,2019-01-30,activo,493.58
+EQ-0175,ADB-SV-0175,servidor,Lenovo ThinkSystem SR650,Ubuntu Server,18.04,10.8.73.32,Customer Support,,2024-07-06,2028-07-05,activo,11105.57
+EQ-0176,ADB-MB-0176,movil,Google Pixel 8,Android,14,,Engineering,Diego Vega,2019-06-28,2020-06-27,activo,1141.86
+EQ-0177,ADB-LT-0177,portatil,Apple MacBook Air M2,macOS,14,10.5.227.130,Sales,Diego García,2023-12-21,2026-12-20,activo,1035.82
+EQ-0178,ADB-MB-0178,movil,Apple iPhone 15,iOS,15,,Marketing,Lucía García,2018-07-12,2019-07-12,activo,990.99
+EQ-0179,ADB-LT-0179,portatil,Lenovo ThinkPad T14,Windows,10,10.6.234.235,Legal,Paula Díaz,2026-05-27,2029-05-26,activo,2242.85
+EQ-0180,ADB-LT-0180,portatil,HP EliteBook 840,Windows,10,10.8.252.158,Customer Support,Paula Castro,2021-12-10,2024-12-09,activo,998.72
+EQ-0181,ADB-MB-0181,movil,Apple iPhone 14,iOS,16,,Marketing,Paula Romero,2019-07-21,2021-07-20,activo,636.45
+EQ-0182,ADB-LT-0182,portatil,Apple MacBook Air M2,macOS,14,10.6.111.30,Legal,,2023-02-02,2024-02-02,activo,2743.32
+EQ-0183,ADB-LT-0183,portatil,HP EliteBook 840,Windows,10,10.2.47.187,Marketing,,2021-11-04,2024-11-03,activo,2466.05
+EQ-0184,ADB-DT-0184,sobremesa,Lenovo ThinkCentre M70,Windows,10,10.8.230.182,Customer Support,Hugo García,2017-10-29,2018-10-29,activo,1199.07
+EQ-0185,ADB-SV-0185,servidor,,Windows Server,2016,10.8.31.39,Customer Support,,2017-10-10,2017-02-25,activo,5583.27
+EQ-0186,ADB-LT-0186,portatil,Lenovo ThinkPad T14,Windows,10,10.7.2.182,Creative Cloud,Sofía Romero,2018-03-27,2021-03-26,activo,1191.51
+EQ-0187,ADB-LT-0187,portatil,Dell Latitude 5420,Windows,7,10.2.69.217,Marketing,Álvaro Jiménez,2017-02-09,2020-02-09,almacen,1191.05
+EQ-0188,ADB-SV-0188,servidor,Dell PowerEdge R650,Ubuntu Server,20.04,10.0.0.256,Sales,,2020-09-29,2024-09-28,activo,12160.16
+EQ-0189,ADB-MB-0189,movil,Samsung Galaxy S23,Android,13,,Finance,Pablo Romero,2020-12-19,2021-12-19,activo,1243.03
+EQ-0190,ADB-LT-0190,portatil,Dell Latitude 5420,Windows,10,10.8.25.146,Customer Support,Carlos García,2023-07-21,2025-07-20,activo,1728.99
+EQ-0191,ADB-MB-0191,movil,Apple iPhone 14,iOS,16,,Legal,,2023-01-30,2025-01-29,activo,610.00
+EQ-0192,ADB-LT-0192,portatil,Lenovo ThinkPad T14,Windows,10,10.3.77.77,Finance,Sergio Navarro,2020-02-12,2023-02-11,activo,2199.41
+EQ-0193,ADB-LT-0193,portatil,Apple MacBook Pro 14,macOS,11,10.8.148.90,Customer Support,Laura Díaz,2017-05-05,2018-05-05,activo,2453.24
+EQ-0100,ADB-LT-0194,portatil,Dell Latitude 5420,Windows,10,10.8.111.153,Customer Support,Pablo Jiménez,2017-09-24,2020-09-23,activo,1677.49
+EQ-0195,ADB-DT-0195,sobremesa,Lenovo ThinkCentre M70,Windows,11,10.1.141.37,Engineering,Sofía Vega,2025-09-23,2024-02-21,activo,1137.36
+EQ-0196,ADB-DT-0196,sobremesa,Dell OptiPlex 7090,Windows,11,10.4.238.22,HR,Nuria Vega,2023-11-15,2025-11-14,baja,2126.44
+EQ-0197,ADB-DT-0197,sobremesa,Lenovo ThinkCentre M70,Windows,10,10.1.218.141,Engineering,Álvaro Martín,2024-09-16,2026-09-16,activo,1009.34
+EQ-0198,ADB-LT-0198,portatil,Apple MacBook Air M2,macOS,14,10.7.37.104,Creative Cloud,Marta García,2024-04-08,2025-04-08,activo,2628.09
+EQ-0199,ADB-DT-0199,sobremesa,Dell OptiPlex 7090,Ubuntu,20.04,10.4.212.55,HR,Diego Romero,2019-02-15,2022-02-14,almacen,1375.06
+EQ-0200,ADB-MB-0200,movil,Apple iPhone 14,iOS,17,,Legal,Álvaro Moreno,2017-06-22,2019-06-22,activo,473.79
+EQ-0201,ADB-LT-0201,portatil,Dell Latitude 5420,Windows,10,10.3.36.21,Finance,Laura Díaz,2020-12-30,2022-12-30,activo,2654.38
+EQ-0202,ADB-LT-0202,portatil,Apple MacBook Air M2,macOS,13,10.5.196.28,Sales,Lucía Moreno,2021-06-02,2023-06-02,activo,2592.54
+EQ-0203,ADB-LT-0203,portatil,Apple MacBook Pro 14,macOS,13,10.7.184.170,Creative Cloud,Elena Martín,2023-09-18,2026-09-17,activo,1651.17
+EQ-0204,ADB-MB-0204,movil,Samsung Galaxy S23,iOS,16,10.1.7.141,Engineering,Pablo Moreno,2023-01-09,2024-01-09,activo,492.72
+EQ-0205,ADB-SV-0205,servidor,Dell PowerEdge R650,Windows Server,2022,10.1.52.60,Engineering,,2022-12-25,2026-12-24,activo,10476.57
+EQ-0206,ADB-SV-0206,servidor,Lenovo ThinkSystem SR650,Windows Server,2022,10.1.62.27,Engineering,,2018-05-01,2023-04-30,almacen,14183.61
+EQ-0207,ADB-DT-0207,sobremesa,Apple Mac mini M2,macOS,11,10.8.253.50,Customer Support,Carlos López,2019-06-22,2021-06-21,almacen,854.21
+EQ-0208,ADB-DT-0208,sobremesa,HP EliteDesk 800,Windows,11,10.2.178.230,Marketing,Marta Torres,2022-11-04,2024-11-03,almacen,1788.80
+EQ-0209,ADB-MB-0209,movil,Samsung Galaxy S23,iOS,15,,Marketing,Laura Castro,2025-11-17,2027-11-17,activo,637.75
+EQ-0210,ADB-MB-0210,movil,Google Pixel 8,iOS,15,,Customer Support,Hugo Moreno,2024-02-23,2025-02-22,activo,1031.98
+EQ-0211,ADB-LT-0211,portatil,HP EliteBook 840,Windows,10,10.8.212.159,Customer Support,Lucía Ortega,2020-12-04,2021-12-04,activo,2042.30
+EQ-0212,ADB-LT-0212,portatil,HP EliteBook 840,Windows,10,10.8.128.86,Customer Support,Sofía Torres,2021-07-22,2022-07-22,activo,1350.32
+EQ-0213,ADB-MB-0213,movil,Apple iPhone 15,iOS,16,,HR,Elena Vega,2017-01-06,2019-01-06,activo,820.21
+EQ-0214,ADB-LT-0214,portatil,Apple MacBook Pro 14,macOS,11,10.1.136.42,Engineering,Lucía Ortega,2018-10-26,2021-10-25,baja,1125.68
+EQ-0215,ADB-DT-0215,tablet,Apple iMac 24,macOS,14,10.2.70.2,Marketing,Paula Martín,2024-12-06,2027-12-06,baja,770.33
+EQ-0216,ADB-MB-0216,movil,,iOS,15,,Marketing,Marta López,2020-04-10,2021-04-10,activo,1212.09
+EQ-0217,ADB-LT-0217,portatil,Dell Latitude 5420,Windows,10,10.7.228.18,Creative Cloud,Marta Moreno,2022-01-10,2025-01-09,activo,2243.51
+EQ-0218,ADB-MB-0218,movil,Apple iPhone 14,iOS,15,,Creative Cloud,Andrés Martín,2022-08-21,2024-08-20,reparacion,1051.87
+EQ-0219,ADB-MB-0219,movil,Samsung Galaxy S23,iOS,17,,Marketing,Diego Navarro,2021-09-16,2022-09-16,activo,1119.90
+EQ-0220,ADB-MB-0220,movil,Google Pixel 8,Android,12,,Sales,Diego Jiménez,2026-06-24,2027-06-24,almacen,879.85
+EQ-0221,ADB-SV-0221,servidor,Dell PowerEdge R650,Windows Server,2022,10.3.41.171,Finance,,2018-11-24,2022-11-23,activo,11280.34
+EQ-0222,ADB-LT-0222,portatil,Apple MacBook Air M2,macOS,10.15,10.8.170.29,Customer Support,Carlos López,2019-10-12,2020-10-11,activo,2646.40
+EQ-0223,ADB-LT-0223,portatil,Apple MacBook Air M2,macOS,10.15,10.6.221.242,Legal,Javier Gómez,2018-10-29,2021-10-28,activo,1286.41
+EQ-0224,ADB-LT-0224,portatil,Dell Latitude 5420,Windows,10,10.7.39.223,Creative Cloud,Lucía Jiménez,2020-06-02,2021-06-02,activo,1626.68
+EQ-0225,ADB-DT-0225,sobremesa,Apple iMac 24,macOS,13,10.2.236.88,Marketing,Irene Vega,2021-11-17,2024-11-16,activo,1687.28
+EQ-0226,ADB-LT-0226,portatil,Apple MacBook Pro 14,macOS,11,10.7.47.112,Creative Cloud,Paula Navarro,2017-05-17,2019-05-17,activo,abc
+EQ-0227,ADB-LT-0227,portatil,Apple MacBook Pro 14,macOS,15,10.6.80.200,Legal,Elena Gómez,2026-08-15,2029-08-14,activo,916.29
+EQ-0228,ADB-MB-0228,movil,Apple iPhone 14,iOS,17,,Sales,Lucía Vega,2026-08-09,2028-08-08,activo,652.20
+EQ-0229,ADB-LT-0229,portatil,Apple MacBook Pro 14,macOS,13,10.4.15.136,HR,Carlos Castro,2023-09-15,2025-09-14,activo,1221.80
+EQ-0230,ADB-LT-0230,portatil,HP EliteBook 840,Windows,10,10.7.26.11,Creative Cloud,Marta Vega,2026-04-21,2029-04-20,activo,1855.42
+EQ-0231,ADB-LT-0231,portatil,Lenovo ThinkPad T14,Windows,11,10.1.148.245,Engineering,Lucía Moreno,2024-11-04,2026-11-04,activo,2515.78
+EQ-0232,ADB-DT-0232,sobremesa,HP EliteDesk 800,Ubuntu,18.04,10.2.138.215,Marketing,Pablo Díaz,2018-04-09,2019-04-09,activo,1965.32
+EQ-0233,ADB-LT-0233,portatil,HP EliteBook 840,Windows,10,10.5.235.166,Sales,Irene Vega,2019-06-27,2020-06-26,activo,2217.54
+EQ-0234,ADB-LT-0234,portatil,HP EliteBook 840,Ubuntu,24.04,10.4.233.205,HR,Diego Gómez,2026-09-23,2028-09-22,activo,2155.87
+EQ-0235,ADB-LT-0235,portatil,HP EliteBook 840,Windows,10,10.6.188.56,Legal,Paula Romero,2020-08-27,2023-08-27,roto,2365.90
+EQ-0236,ADB-LT-0236,portatil,Apple MacBook Air M2,macOS,10.15,10.8.126.73,Customer Support,Javier Sánchez,2020-09-28,2023-09-28,activo,1731.92
+EQ-0237,ADB-SV-0237,servidor,Lenovo ThinkSystem SR650,Windows Server,2016,10.2.187.143,Marketing,,2025-06-27,2030-06-26,baja,7535.08
+EQ-0238,ADB-LT-0238,portatil,Apple MacBook Air M2,macOS,11,10.5.66.41,Sales,Paula Ortega,2020-05-11,2021-05-11,baja,2657.62
+EQ-0239,ADB-LT-0239,portatil,Apple MacBook Air M2,macOS,11,10.3.15.165,Finance,,2022/03/15,2023-12-27,activo,2586.59
+EQ-0240,ADB-SV-0240,servidor,HP ProLiant DL380,Windows Server,2016,10.2.99.203,Marketing,,2026-01-28,2029-01-27,baja,7357.61
+EQ-0241,ADB-MB-0241,movil,Apple iPhone 15,iOS,15,,Marketing,Pablo Jiménez,2022-05-01,2024-04-30,activo,582.73
+EQ-0242,ADB-DT-0242,sobremesa,Apple Mac mini M2,macOS,12,10.6.110.11,Legal,Javier Ruiz,2022-01-31,2023-01-31,activo,950.24
+EQ-0243,ADB-SV-0243,servidor,HP ProLiant DL380,Ubuntu Server,18.04,10.3.136.169,Finance,,2025-12-27,2029-12-26,activo,10993.09
+EQ-0244,ADB-LT-0244,portatil,Lenovo ThinkPad T14,Windows,10,10.3.208.49,Finance,Carlos Díaz,2018-05-12,2020-05-11,activo,2251.70
+EQ-0245,ADB-MB-0245,movil,Samsung Galaxy S23,Android,13,,Finance,Lucía Moreno,2024-06-04,2025-06-04,activo,531.15
+EQ-0246,ADB-MB-0246,movil,Samsung Galaxy S23,Android,11,10.5.52.227,Sales,Sofía García,2022-02-28,2024-02-28,activo,1253.76
+EQ-0247,ADB-MB-0247,movil,Apple iPhone 14,iOS,16,,Engineering,Andrés Ortega,2022-11-17,2024-11-16,activo,1051.00
+EQ-0248,ADB-LT-0248,portatil,Apple MacBook Pro 14,macOS,14,10.2.8.133,Marketing,,2026-04-22,2029-04-21,activo,1342.33
+EQ-0249,ADB-SV-0249,servidor,HP ProLiant DL380,Ubuntu Server,18.04,10.3.24.67,Finance,,2022-10-13,2027-10-12,activo,4555.07
+EQ-0250,ADB-DT-0250,sobremesa,Lenovo ThinkCentre M70,Windows,11,10.6.15.169,Legal,Irene Ruiz,2026-08-03,2028-08-02,activo,1684.36
+EQ-0251,ADB-LT-0251,portatil,Lenovo ThinkPad T14,Windows,10,10.8.49.233,Customer Support,Nuria Ruiz,2020-05-25,2021-05-25,activo,993.55
+EQ-0252,ADB-LT-0252,portatil,Lenovo ThinkPad T14,Windows,10,10.7.50.208,Creative Cloud,Pablo Ruiz,2021-11-18,2022-11-18,activo,2430.65
+EQ-0253,ADB-MB-0253,movil,Samsung Galaxy S23,Android,13,,Customer Support,Álvaro Castro,2026-07-26,2027-07-26,activo,1094.85
+EQ-0254,ADB-DT-0254,sobremesa,Apple Mac mini M2,macOS,13,10.4.60.72,HR,Paula Torres,2024-01-23,2027-01-22,activo,741.96
+EQ-0255,ADB-LT-0255,portatil,Apple MacBook Pro 14,macOS,12,10.4.78.103,HR,Sergio Ortega,2021-10-17,2023-10-17,activo,2745.92
+EQ-0256,ADB-LT-0256,portatil,Apple MacBook Pro 14,macOS,11,10.2.74.116,Marketing,Andrés Romero,2017-12-14,2019-12-14,activo,2740.37
+EQ-0257,ADB-DT-0257,sobremesa,Dell OptiPlex 7090,Windows,10,10.7.147.118,Creative Cloud,Sofía García,2022-12-30,2024-12-29,activo,948.16
+EQ-0258,ADB-MB-0258,movil,Apple iPhone 14,iOS,16,,Creative Cloud,Sofía Navarro,2017-01-28,2019-01-28,activo,888.17
+EQ-0259,ADB-LT-0259,portatil,Lenovo ThinkPad T14,Windows,11,10.5.82.251,Sales,Irene Ruiz,2026-04-19,2027-04-19,activo,1909.83
+EQ-0260,ADB-DT-0260,sobremesa,Apple Mac mini M2,macOS,12,10.6.36.242,Legal,Irene López,2021-03-19,2022-03-19,activo,1046.27
+EQ-0261,ADB-LT-0261,portatil,Lenovo ThinkPad T14,Windows,10,10.1.204.88,Engineering,Paula Díaz,2020-10-31,2023-10-31,activo,1976.88
+EQ-0262,ADB-LT-0262,portatil,HP EliteBook 840,Windows,10,10.2.246.7,Marketing,Diego Navarro,2019-11-09,2020-11-08,activo,1797.14
+EQ-0263,ADB-MB-0263,movil,Apple iPhone 14,iOS,17,,Customer Support,Hugo Ruiz,2024-11-15,2026-11-15,activo,999.50
+EQ-0264,ADB-LT-0264,portatil,HP EliteBook 840,Windows,11,10.7.58.81,Creative Cloud,Diego Sánchez,2024-06-12,2026-06-12,activo,2482.89
+EQ-0265,ADB-SV-0265,servidor,Dell PowerEdge R650,Windows Server,2022,10.4.69.75,HR,,2022-10-07,2026-10-06,activo,8521.23
+EQ-0266,ADB-MB-0266,laptop,,Android,12,,Engineering,Carlos Torres,2018-01-09,2019-01-09,baja,1067.35
+EQ-0267,ADB-MB-0267,movil,Samsung Galaxy S23,iOS,17,10.3.6.192,Finance,,2022-07-30,2023-07-30,activo,797.34
+EQ-0268,ADB-LT-0268,portatil,HP EliteBook 840,Windows,10,10.1.154.115,Engineering,Carlos Pérez,2018-05-31,2020-05-30,activo,1118.42
+EQ-0269,ADB-MB-0269,movil,Google Pixel 8,Android,11,,Marketing,,2021-08-18,2023-08-18,activo,458.44
+EQ-0270,ADB-DT-0270,sobremesa,HP EliteDesk 800,Windows,11,10.1.195.210,Engineering,Irene Castro,2026-04-24,2027-04-24,activo,1659.38
+EQ-0271,ADB-LT-0271,portatil,Lenovo ThinkPad T14,Windows,11,10.2.215.182,Marketing,Andrés Gómez,2025-04-09,2027-04-09,almacen,1268.23
+EQ-0272,ADB-MB-0272,movil,Google Pixel 8,iOS,17,,Creative Cloud,Pablo Vega,2021-06-12,2027-02-30,almacen,769.04
+EQ-0273,ADB-MB-0273,movil,Apple iPhone 14,iOS,15,10.4.222.213,HR,Diego Vega,2019-04-22,2020-04-21,activo,745.89
+EQ-0274,ADB-LT-0274,portatil,Lenovo ThinkPad T14,Ubuntu,22.04,10.5.132.58,Sales,Nuria Ruiz,2024-01-29,2027-01-28,activo,1293.36
+EQ-0275,ADB-LT-0275,portatil,Dell Latitude 5420,,10,10.6.130.49,Legal,Sergio Gómez,2023-07-16,2026-07-15,activo,2237.77
+EQ-0276,ADB-LT-0276,portatil,HP EliteBook 840,Windows,11,10.4.33.199,HR,Sofía López,2023-08-21,2026-08-20,activo,2188.33
+EQ-0277,ADB-SV-0277,servidor,Dell PowerEdge R650,Windows Server,2022,10.1.246.39,Engineering,,2018-01-13,2022-01-12,activo,8314.55
+EQ-0278,ADB-LT-0278,portatil,Dell Latitude 5420,Windows,11,10.6.146.206,Legal,,2026-03-10,2029-03-09,activo,1060.48
+EQ-0279,ADB-LT-0279,portatil,,macOS,12,10.5.23.67,Sales,Paula Ortega,2022-02-20,2025-02-19,activo,2159.98
+EQ-0280,ADB-MB-0280,movil,Apple iPhone 14,iOS,16,,Marketing,Javier García,2018-09-11,2020-09-10,activo,974.55
+EQ-0281,ADB-LT-0281,portatil,Apple MacBook Air M2,macOS,11,10.6.139.71,Legal,Pablo Martín,2019-09-16,2020-09-15,activo,1063.40
+EQ-0282,ADB-LT-0282,portatil,Dell Latitude 5420,Windows,10,10.6.161.62,Legal,Sofía Pérez,2019-06-28,2022-06-27,activo,1843.74
+EQ-0283,ADB-DT-0283,sobremesa,HP EliteDesk 800,Windows,10,10.3.140.240,Finance,Sergio Torres,2017-03-08,2018-03-08,activo,1711.66
+EQ-0284,ADB-LT-0284,portatil,Apple MacBook Pro 14,macOS,11,10.3.69.106,Finance,Nuria Torres,2020-08-11,2022-08-11,activo,1678.55
+EQ-0285,ADB-LT-0285,portatil,Apple MacBook Air M2,macOS,15,10.1.112.160,Engineering,Elena Jiménez,2025-03-08,2027-03-08,activo,1975.06
+EQ-0286,ADB-LT-0286,portatil,Apple MacBook Air M2,macOS,15,10.5.47.170,Sales,Pablo Martín,2025-11-02,2026-11-02,reparacion,2045.69
+EQ-0287,ADB-MB-0287,movil,Apple iPhone 15,iOS,15,,HR,Javier Díaz,2023-02-25,2025-02-24,activo,462.98
+EQ-0288,ADB-DT-0288,sobremesa,Apple iMac 24,macOS,13,10.4.21.151,HR,Carlos Ruiz,2024-02-06,2026-02-05,activo,2037.99
+EQ-0289,ADB-LT-0289,portatil,,Windows,8.1,10.5.113.23,Sales,Diego Romero,2017-02-25,2019-02-25,activo,1113.41
+EQ-0290,ADB-DT-0290,sobremesa,HP EliteDesk 800,Windows,10,10.7.244.10,Creative Cloud,Elena Díaz,2023-02-12,2024-02-12,activo,787.43
+EQ-0291,ADB-LT-0291,portatil,Apple MacBook Air M2,macOS,10.15,10.2.233.216,Marketing,Carlos Moreno,2019-05-10,2020-05-09,activo,2033.10
+EQ-0292,ADB-MB-0292,movil,Apple iPhone 15,iOS,16,,Finance,Carlos Ruiz,2025-05-29,2026-05-29,activo,944.08
+EQ-0293,ADB-SV-0293,servidor,Dell PowerEdge R650,Windows Server,2016,10.5.17.214,Sales,,2021-04-06,2024-04-05,activo,11103.27
+EQ-0294,ADB-LT-0294,portatil,Apple MacBook Pro 14,macOS,11,10.3.104.12,Finance,Elena Díaz,2020-07-13,2023-07-13,activo,1258.17
+EQ-0295,ADB-LT-0295,portatil,HP EliteBook 840,Ubuntu,18.04,10.4.195.136,HR,Pablo Torres,2020-11-05,2021-11-05,activo,2046.01
+EQ-0296,ADB-LT-0296,portatil,Apple MacBook Pro 14,macOS,11,10.4.37.98,HR,Marta Vega,2017-10-28,2020-10-27,activo,2007.42
+EQ-0297,ADB-LT-0297,portatil,Dell Latitude 5420,Windows,7,10.7.178.188,Creative Cloud,Álvaro Martín,2018-06-10,2021-06-09,baja,2262.22
+EQ-0298,ADB-DT-0298,sobremesa,Dell OptiPlex 7090,Windows,11,10.1.158.250,Engineering,Andrés López,2026-02-15,2027-02-15,activo,1059.42
+EQ-0299,ADB-LT-0299,portatil,Lenovo ThinkPad T14,Windows,10,10.3.14.83,Finance,Paula López,2017-04-04,2020-04-03,activo,1491.27
+EQ-0300,ADB-SV-0300,servidor,Dell PowerEdge R650,Ubuntu Server,18.04,10.6.36.160,Legal,,2024-12-07,2028-12-06,activo,9058.27
