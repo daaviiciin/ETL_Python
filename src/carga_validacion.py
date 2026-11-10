@@ -177,6 +177,82 @@ def es_precio_valido(texto):
 # ---------------------------------------------------------------------------
 # Validación de filas e inventario completo
 # ---------------------------------------------------------------------------
+def validar_campo(campo, fila, ids_validos, ips_validas):
+    """
+    Aplica a UN campo de la fila las reglas que le corresponden.
+
+    Recibe la fila entera porque fin_garantia necesita también fecha_compra.
+    ids_validos e ips_validas son conjuntos (set) con los identificadores e
+    IP de los equipos ya aceptados, para detectar duplicados.
+
+    Devuelve None si el campo es válido, o el código de error
+    (una clave de config.MOTIVOS_ERROR). Las columnas sin reglas
+    (marca_modelo, version_so, usuario_asignado) siempre son válidas.
+    """
+    # .get() devuelve None si la clave no existe, y nuestras reglas ya
+    # saben tratar None (cuenta como vacío / inválido).
+    valor = fila.get(campo)
+
+    if campo == "id_equipo":
+        # Obligatorio y sin repetir entre los equipos ya aceptados.
+        if esta_vacio(valor):
+            return "ID_VACIO"
+        if valor in ids_validos:
+            return "ID_DUPLICADO"
+
+    elif campo == "hostname":
+        if esta_vacio(valor):
+            return "HOSTNAME_VACIO"
+
+    elif campo == "tipo":
+        # Tiene que ser EXACTAMENTE uno de la lista (" portatil" no vale).
+        if valor not in config.TIPOS_VALIDOS:
+            return "TIPO_INVALIDO"
+
+    elif campo == "sistema_operativo":
+        if esta_vacio(valor):
+            return "SO_VACIO"
+
+    elif campo == "direccion_ip":
+        # Es OPCIONAL: solo se comprueba si viene rellena.
+        if not esta_vacio(valor):
+            if not es_ip_valida(valor):
+                return "IP_INVALIDA"
+            if valor in ips_validas:
+                return "IP_DUPLICADA"
+
+    elif campo == "departamento":
+        if esta_vacio(valor):
+            return "DEPARTAMENTO_VACIO"
+
+    elif campo == "fecha_compra":
+        if convertir_fecha(valor) is None:
+            return "FECHA_COMPRA_INVALIDA"
+
+    elif campo == "fin_garantia":
+        fin_garantia = convertir_fecha(valor)
+        if fin_garantia is None:
+            return "FIN_GARANTIA_INVALIDA"
+        # Aquí necesitamos los date para poder compararlos. fecha_compra ya
+        # se validó antes (va antes en el contrato), pero por seguridad
+        # solo comparamos si es una fecha correcta.
+        fecha_compra = convertir_fecha(fila.get("fecha_compra"))
+        # "Posterior" significa estrictamente mayor: el mismo día no vale.
+        if fecha_compra is not None and fin_garantia <= fecha_compra:
+            return "GARANTIA_ANTERIOR_COMPRA"
+
+    elif campo == "estado":
+        # Tiene que ser EXACTAMENTE uno de la lista.
+        if valor not in config.ESTADOS_VALIDOS:
+            return "ESTADO_INVALIDO"
+
+    elif campo == "precio_eur":
+        if not es_precio_valido(valor):
+            return "PRECIO_INVALIDO"
+
+    return None
+
+
 def validar_fila(fila, ids_validos, ips_validas):
     """
     Aplica las reglas del contrato a una fila, en el orden de las columnas.
@@ -187,59 +263,13 @@ def validar_fila(fila, ids_validos, ips_validas):
     Devuelve None si la fila es válida, o el código de la PRIMERA regla que
     falla (una clave de config.MOTIVOS_ERROR).
     """
-    # Las comprobaciones van en el mismo orden que las columnas del
-    # contrato. En cuanto una falla hacemos return: así solo se informa de
-    # la primera regla incumplida, aunque la fila tenga más errores.
-
-    # id_equipo: obligatorio y sin repetir entre los equipos ya aceptados.
-    if esta_vacio(fila["id_equipo"]):
-        return "ID_VACIO"
-    if fila["id_equipo"] in ids_validos:
-        return "ID_DUPLICADO"
-
-    # hostname: obligatorio.
-    if esta_vacio(fila["hostname"]):
-        return "HOSTNAME_VACIO"
-
-    # tipo: tiene que ser EXACTAMENTE uno de la lista (" portatil" no vale).
-    if fila["tipo"] not in config.TIPOS_VALIDOS:
-        return "TIPO_INVALIDO"
-
-    # sistema_operativo: obligatorio.
-    if esta_vacio(fila["sistema_operativo"]):
-        return "SO_VACIO"
-
-    # direccion_ip: es OPCIONAL. Solo se comprueba si viene rellena.
-    if not esta_vacio(fila["direccion_ip"]):
-        if not es_ip_valida(fila["direccion_ip"]):
-            return "IP_INVALIDA"
-        if fila["direccion_ip"] in ips_validas:
-            return "IP_DUPLICADA"
-
-    # departamento: obligatorio.
-    if esta_vacio(fila["departamento"]):
-        return "DEPARTAMENTO_VACIO"
-
-    # fechas: convertir_fecha devuelve un date o None.
-    fecha_compra = convertir_fecha(fila["fecha_compra"])
-    if fecha_compra is None:
-        return "FECHA_COMPRA_INVALIDA"
-    fin_garantia = convertir_fecha(fila["fin_garantia"])
-    if fin_garantia is None:
-        return "FIN_GARANTIA_INVALIDA"
-    # Aquí es donde necesitamos los date: para poder compararlos.
-    # "Posterior" significa estrictamente mayor: el mismo día no vale.
-    if fin_garantia <= fecha_compra:
-        return "GARANTIA_ANTERIOR_COMPRA"
-
-    # estado: tiene que ser EXACTAMENTE uno de la lista.
-    if fila["estado"] not in config.ESTADOS_VALIDOS:
-        return "ESTADO_INVALIDO"
-
-    # precio_eur: número con punto decimal mayor que 0.
-    if not es_precio_valido(fila["precio_eur"]):
-        return "PRECIO_INVALIDO"
-
+    # Recorremos las columnas en el orden del contrato. En cuanto una falla
+    # hacemos return: así solo se informa de la primera regla incumplida,
+    # aunque la fila tenga más errores.
+    for campo in config.COLUMNAS_CONTRATO:
+        codigo = validar_campo(campo, fila, ids_validos, ips_validas)
+        if codigo is not None:
+            return codigo
     # Ha pasado todas las reglas.
     return None
 

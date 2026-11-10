@@ -31,6 +31,39 @@ def obtener_fecha_referencia():
     return date.today()
 
 
+def elegir_de_lista(texto, opciones):
+    """
+    Muestra las opciones numeradas y pide elegir una por su número.
+    Devuelve la opción elegida, o None si se pulsa Enter sin escribir nada.
+    """
+    print(texto)
+    for numero, opcion in enumerate(opciones, start=1):
+        print(f"  {numero}. {opcion}")
+    while True:
+        respuesta = input("Número (Enter = cancelar): ").strip()
+        if respuesta == "":
+            return None
+        # isdecimal() evita que int() falle con letras o símbolos.
+        if respuesta.isdecimal() and 1 <= int(respuesta) <= len(opciones):
+            return opciones[int(respuesta) - 1]
+        print("Número no válido. Prueba otra vez.")
+
+
+def mostrar_resultados_ficheros(resultados):
+    """
+    Muestra, para cada (ruta, error), si el fichero se generó o por qué no.
+    Devuelve True si se generaron todos.
+    """
+    todo_bien = True
+    for ruta, error in resultados:
+        if error is None:
+            print(f"  Generado: {carga_validacion.ruta_para_mostrar(ruta)}")
+        else:
+            print(f"  Aviso: {error}")
+            todo_bien = False
+    return todo_bien
+
+
 # ---------------------------------------------------------------------------
 # Menú principal
 # ---------------------------------------------------------------------------
@@ -62,16 +95,23 @@ def accion_auditoria(inventario, fecha_referencia):
     # los ficheros y los gráficos: así siempre coinciden entre sí.
     auditoria = informes.calcular_auditoria(inventario, fecha_referencia)
     informes.mostrar_auditoria(auditoria)
-    informes.generar_informes(auditoria, fecha_referencia)
-    informes.generar_graficos(auditoria)
+    print()
+    print("Ficheros de salida:")
+    mostrar_resultados_ficheros(informes.generar_informes(auditoria))
+    mostrar_resultados_ficheros(informes.generar_graficos(auditoria))
 
 
 def accion_guardar(inventario):
     """
     Guarda el inventario en salida/inventario_actualizado.csv.
-    El CSV original nunca se toca.
+    El CSV original nunca se toca. Devuelve True si se guardó bien.
     """
-    gestion.guardar_inventario(inventario)
+    error = gestion.guardar_inventario(inventario)
+    if error is not None:
+        print(f"Aviso: {error}")
+        return False
+    print(f"Inventario guardado en {carga_validacion.ruta_para_mostrar(config.UPDATED_FILE)}")
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -80,9 +120,29 @@ def accion_guardar(inventario):
 # append o cambia un equipo, main() ve el cambio sin usar variables globales.
 # ---------------------------------------------------------------------------
 def accion_alta(inventario):
-    """Pide los datos de un equipo nuevo e intenta darlo de alta."""
-    # Pedimos los datos y gestion decide si son válidos.
-    equipo = gestion.pedir_datos_equipo()
+    """
+    Pide uno a uno los campos de un equipo nuevo. Cada dato se valida en
+    cuanto se escribe y, si no es válido, se vuelve a pedir. Escribiendo
+    config.PALABRA_CANCELAR se abandona el alta sin añadir nada.
+    """
+    print(f"Alta de equipo (escribe '{config.PALABRA_CANCELAR}' para salir).")
+    equipo = {}
+    # Se piden en el orden del contrato: así fecha_compra ya existe cuando
+    # se valida fin_garantia, que la necesita para compararlas.
+    for campo in config.COLUMNAS_CONTRATO:
+        while True:
+            # Aquí NO usamos strip(): " activo" debe rechazarse igual que en
+            # la carga del CSV, no corregirse en silencio.
+            valor = input(f"  {campo}: ")
+            if valor.strip().casefold() == config.PALABRA_CANCELAR:
+                print("Alta cancelada.")
+                return
+            equipo[campo] = valor
+            motivo = gestion.validar_dato_alta(campo, equipo, inventario)
+            if motivo is None:
+                break
+            print(f"  No válido: {motivo}")
+
     exito, mensaje = gestion.dar_alta_equipo(inventario, equipo)
     print(mensaje)
 
@@ -97,23 +157,39 @@ def accion_baja(inventario):
 
 def accion_buscar(inventario):
     """Pide un campo y un valor, y muestra los equipos que coinciden."""
-    # Mostramos los campos permitidos desde config.
-    campo = input(f"Campo {config.CAMPOS_BUSQUEDA}: ").strip()
+    campo = elegir_de_lista("¿Por qué campo quieres buscar?", config.CAMPOS_BUSQUEDA)
+    if campo is None:
+        return
     valor = input("Valor a buscar: ").strip()
     gestion.mostrar_equipos(gestion.buscar_equipos(inventario, campo, valor))
 
 
 def accion_modificar(inventario):
     """Pide un id_equipo, un campo modificable y su nuevo valor."""
-    # Solo estado, departamento o usuario asignado.
     id_equipo = input("id_equipo a modificar: ").strip()
-    campo = input(f"Campo {config.CAMPOS_MODIFICABLES}: ").strip()
-    nuevo_valor = input("Nuevo valor: ").strip()
+    if gestion.buscar_por_id(inventario, id_equipo) is None:
+        print(f"No existe ningún equipo con id {id_equipo}.")
+        return
+    # Solo estado, departamento o usuario asignado.
+    campo = elegir_de_lista("¿Qué campo quieres modificar?", config.CAMPOS_MODIFICABLES)
+    if campo is None:
+        return
+    if campo == "estado":
+        # Para el estado ofrecemos la lista: así no se puede escribir mal.
+        nuevo_valor = elegir_de_lista("Nuevo estado:", config.ESTADOS_VALIDOS)
+        if nuevo_valor is None:
+            return
+    else:
+        nuevo_valor = input("Nuevo valor: ")
     exito, mensaje = gestion.modificar_equipo(inventario, id_equipo, campo, nuevo_valor)
     print(mensaje)
 
 
 def accion_listar(inventario):
-    """Muestra el inventario completo."""
-    # Sin filtro, filtrar_equipos devuelve el inventario completo.
-    gestion.mostrar_equipos(gestion.filtrar_equipos(inventario))
+    """Muestra el inventario completo o filtrado por tipo, departamento o estado."""
+    campo = elegir_de_lista("¿Filtrar por algún campo? (Enter = listado completo)", config.CAMPOS_FILTRO)
+    if campo is None:
+        gestion.mostrar_equipos(gestion.filtrar_equipos(inventario))
+        return
+    valor = input(f"Valor de {campo}: ").strip()
+    gestion.mostrar_equipos(gestion.filtrar_equipos(inventario, campo, valor))

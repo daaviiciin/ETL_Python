@@ -1,0 +1,4 @@
+# Fija los finales de línea de los scripts sea cual sea el sistema que los
+# descargue: bash no acepta CRLF y cmd espera CRLF.
+*.sh  text eol=lf
+*.bat text eol=crlf

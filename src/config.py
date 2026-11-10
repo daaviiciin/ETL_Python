@@ -19,7 +19,10 @@ FECHA_REFERENCIA_FIJA = None
 # ---------------------------------------------------------------------------
 # Rutas (relativas a la carpeta del proyecto, funcionan en cualquier equipo)
 # ---------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent
+# Este fichero está en src/, así que la carpeta del proyecto es la de arriba:
+# .parent es src/ y .parent.parent es la raíz, donde están datos/ y salida/.
+# Como se calcula a partir de __file__, da igual desde qué carpeta se lance.
+BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "datos"
 OUTPUT_DIR = BASE_DIR / "salida"
 
@@ -111,6 +114,14 @@ MOTIVOS_ERROR = {
 # ---------------------------------------------------------------------------
 CAMPOS_BUSQUEDA = ("id_equipo", "hostname", "departamento", "tipo")
 CAMPOS_MODIFICABLES = ("estado", "departamento", "usuario_asignado")
+CAMPOS_FILTRO = ("tipo", "departamento", "estado")
+# En estos campos la búsqueda encuentra coincidencias parciales
+# ("ADB-LT" encuentra todos los portátiles); en el resto debe ser exacta.
+CAMPOS_BUSQUEDA_PARCIAL = ("hostname", "departamento")
+# Palabra que el usuario escribe para abandonar un alta a medias.
+PALABRA_CANCELAR = "cancelar"
+# Columnas que se muestran al listar equipos por consola.
+COLUMNAS_LISTADO = ("id_equipo", "hostname", "tipo", "departamento", "estado", "usuario_asignado")
 
 # ---------------------------------------------------------------------------
 # Umbrales de la auditoría

@@ -3,7 +3,7 @@ Programa principal de IT Asset Manager.
 
 Responsabilidad: SOLO los menús. Muestra las opciones, lee la elección del
 usuario y llama a la función correspondiente de acciones.py.
-Se ejecuta con:  python main.py
+Se ejecuta desde la carpeta del proyecto con:  python src/main.py
 """
 
 # main está arriba del todo en la "escalera" de dependencias: solo habla con
@@ -66,21 +66,16 @@ def menu_gestion(inventario):
     while opcion != "0":
         mostrar_menu_gestion()
         opcion = pedir_opcion(("1", "2", "3", "4", "5", "0"))
-        # try/except: si la función elegida aún no está implementada,
-        # lanza NotImplementedError y aquí la capturamos para no romper.
-        try:
-            if opcion == "1":
-                acciones.accion_alta(inventario)
-            elif opcion == "2":
-                acciones.accion_baja(inventario)
-            elif opcion == "3":
-                acciones.accion_buscar(inventario)
-            elif opcion == "4":
-                acciones.accion_modificar(inventario)
-            elif opcion == "5":
-                acciones.accion_listar(inventario)
-        except NotImplementedError:
-            print("Esta opción aún no está implementada.")
+        if opcion == "1":
+            acciones.accion_alta(inventario)
+        elif opcion == "2":
+            acciones.accion_baja(inventario)
+        elif opcion == "3":
+            acciones.accion_buscar(inventario)
+        elif opcion == "4":
+            acciones.accion_modificar(inventario)
+        elif opcion == "5":
+            acciones.accion_listar(inventario)
 
 
 def main():
@@ -98,33 +93,34 @@ def main():
     while opcion not in ("4", "0"):
         mostrar_menu_principal(fecha_referencia, inventario is not None)
         opcion = pedir_opcion(("1", "2", "3", "4", "0"))
-        try:
-            if opcion == "1":
-                # Si la carga falla (devuelve None) conservamos el inventario
-                # que hubiera antes, en vez de perderlo.
-                nuevo_inventario = acciones.accion_cargar()
-                if nuevo_inventario is not None:
-                    inventario = nuevo_inventario
-            elif opcion in ("2", "3", "4") and inventario is None:
-                # Sin inventario no se puede gestionar, auditar ni guardar.
-                print("Primero carga un inventario (opción 1).")
-                if opcion == "4":
-                    # Anulamos la opción para que el while no termine:
-                    # no tiene sentido "guardar y salir" sin nada que guardar.
-                    opcion = None
-            elif opcion == "2":
-                menu_gestion(inventario)
-            elif opcion == "3":
-                acciones.accion_auditoria(inventario, fecha_referencia)
-            elif opcion == "4":
-                acciones.accion_guardar(inventario)
-        except NotImplementedError:
-            print("Esta opción aún no está implementada.")
+        if opcion == "1":
+            # Si la carga falla (devuelve None) conservamos el inventario
+            # que hubiera antes, en vez de perderlo.
+            nuevo_inventario = acciones.accion_cargar()
+            if nuevo_inventario is not None:
+                inventario = nuevo_inventario
+        elif opcion in ("2", "3", "4") and inventario is None:
+            # Sin inventario no se puede gestionar, auditar ni guardar.
+            print("Primero carga un inventario (opción 1).")
+            if opcion == "4":
+                # Anulamos la opción para que el while no termine:
+                # no tiene sentido "guardar y salir" sin nada que guardar.
+                opcion = None
+        elif opcion == "2":
+            menu_gestion(inventario)
+        elif opcion == "3":
+            acciones.accion_auditoria(inventario, fecha_referencia)
+        elif opcion == "4":
+            # Se guarda en salida/inventario_actualizado.csv; el CSV
+            # original nunca se toca. Si no se pudo guardar (por ejemplo,
+            # el fichero está abierto en Excel), no salimos del programa.
+            if not acciones.accion_guardar(inventario):
+                opcion = None
 
     print("Hasta luego.")
 
 
-# Solo arranca el menú si ejecutamos "python main.py" directamente.
+# Solo arranca el menú si ejecutamos "python src/main.py" directamente.
 # Si otro fichero hiciera "import main", el menú no se lanzaría solo.
 if __name__ == "__main__":
     main()
