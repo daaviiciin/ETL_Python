@@ -94,7 +94,7 @@ def main():
     inventario = None
     opcion = None
 
-    # El bucle termina con "4" (guardar y salir) o "0" (salir sin guardar).
+    # Solo termina con "4" si el guardado tiene éxito, o con "0".
     while opcion not in ("4", "0"):
         mostrar_menu_principal(fecha_referencia, inventario is not None)
         opcion = pedir_opcion(("1", "2", "3", "4", "0"))
@@ -117,7 +117,9 @@ def main():
             elif opcion == "3":
                 acciones.accion_auditoria(inventario, fecha_referencia)
             elif opcion == "4":
-                acciones.accion_guardar(inventario)
+                if not acciones.accion_guardar(inventario):
+                    print("No se ha guardado el inventario. Puedes reintentar; los datos siguen en memoria.")
+                    opcion = None
         except NotImplementedError:
             print("Esta opción aún no está implementada.")
 

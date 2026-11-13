@@ -71,7 +71,7 @@ def accion_guardar(inventario):
     Guarda el inventario en salida/inventario_actualizado.csv.
     El CSV original nunca se toca.
     """
-    gestion.guardar_inventario(inventario)
+    return gestion.guardar_inventario(inventario)
 
 
 # ---------------------------------------------------------------------------

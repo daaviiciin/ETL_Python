@@ -107,7 +107,20 @@ def modificar_equipo(inventario, id_equipo, campo, nuevo_valor):
 
     Devuelve una tupla (exito, mensaje).
     """
-    raise NotImplementedError
+    equipo = buscar_por_id(inventario, id_equipo)
+    if equipo is None:
+        return False, f"No se encuentra el equipo con ID {id_equipo}."
+    if campo not in config.CAMPOS_MODIFICABLES:
+        return False, f"Campo no modificable. Campos permitidos: {config.CAMPOS_MODIFICABLES}"
+    if not isinstance(nuevo_valor, str):
+        return False, "El nuevo valor debe ser texto."
+    if campo == "estado" and nuevo_valor not in config.ESTADOS_VALIDOS:
+        return False, f"Estado no válido. Estados permitidos: {config.ESTADOS_VALIDOS}"
+    if campo == "departamento" and not nuevo_valor.strip():
+        return False, "El departamento no puede estar vacío."
+
+    equipo[campo] = nuevo_valor
+    return True, f"Campo {campo} del equipo {equipo['id_equipo']} modificado correctamente."
 
 
 def filtrar_equipos(inventario, campo=None, valor=None):
@@ -152,4 +165,26 @@ def guardar_inventario(inventario):
 
     El fichero original nunca se sobrescribe.
     """
-    raise NotImplementedError
+    import csv
+    from pathlib import Path
+    import carga_validacion
+
+    try:
+        destino = Path(config.UPDATED_FILE)
+        original = Path(config.INVENTORY_FILE)
+        if destino.resolve() == original.resolve() or (
+            destino.exists() and original.exists() and destino.samefile(original)
+        ):
+            print("Error: el destino coincide con el CSV original. No se ha guardado.")
+            return False
+        error = carga_validacion.escribir_csv(
+            destino, inventario, config.COLUMNAS_CONTRATO
+        )
+    except (OSError, UnicodeError, csv.Error) as error:
+        print(f"Error al guardar el inventario: {error}")
+        return False
+    if error is not None:
+        print(f"Error al guardar el inventario: {error}")
+        return False
+    print(f"Inventario guardado en {destino}.")
+    return True
