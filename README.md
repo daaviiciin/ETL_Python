@@ -2,14 +2,14 @@
 
 ## 1. Descripción del proyecto
 
-IT Asset Manager es una aplicación de consola desarrollada en Python para gestionar y analizar un inventario de equipos informáticos mediante archivos CSV. Permite cargar y validar registros, gestionar equipos y guardar el inventario actualizado. Los cálculos de análisis están parcialmente implementados; la auditoría completa, los informes y los gráficos siguen pendientes.
+IT Asset Manager es una aplicación de consola desarrollada en Python para gestionar y analizar un inventario de equipos informáticos mediante archivos CSV. Permite cargar y validar registros, gestionar equipos, guardar el inventario actualizado y consultar una auditoría con informes TXT/CSV y gráficos PNG.
 
 ## 2. Tecnologías y dependencias
 
 - Python 3.12, definido en `environment.yml`.
 - Git y GitHub para el control de versiones y la colaboración.
 - Biblioteca estándar de Python: `csv`, `pathlib`, `datetime`, `re`, `math` y `decimal`.
-- Dependencias declaradas: pandas 3.1 y matplotlib 3.11 en Conda; `pandas>=3.1,<3.2` y `matplotlib>=3.11,<3.12` en pip. El código actual no utiliza pandas ni matplotlib; la generación de gráficos está pendiente.
+- Dependencias declaradas: pandas 3.1 y matplotlib 3.11 en Conda; `pandas>=3.1,<3.2` y `matplotlib>=3.11,<3.12` en pip. Matplotlib genera los gráficos con el renderizador no interactivo Agg; pandas no se utiliza en el código actual.
 
 Se puede utilizar cualquier editor o IDE, como PyCharm o Visual Studio Code.
 
@@ -27,6 +27,8 @@ ETL_Python/
 ├── carga_validacion.py
 ├── gestion.py
 ├── informes.py
+├── test_informes.py
+├── test_main.py
 ├── datos/
 │   ├── inventario.csv
 │   └── inventario_prueba.csv
@@ -121,11 +123,23 @@ El menú ofrece:
 
 1. **Cargar y validar inventario:** Enter selecciona `datos/inventario.csv`. También se puede indicar `datos/inventario_prueba.csv` u otra ruta. Las rutas relativas introducidas se interpretan desde la carpeta del proyecto. Una carga fallida conserva el inventario anterior.
 2. **Gestión del inventario:** altas, bajas lógicas, búsquedas, modificaciones y listado completo; `0` vuelve al menú principal.
-3. **Auditoría, informes y gráficos:** opción todavía pendiente de integración. Muestra el aviso de función no implementada y vuelve al menú.
+3. **Auditoría, informes y gráficos:** abre el submenú de análisis del inventario cargado.
 4. **Guardar y salir:** escribe `salida/inventario_actualizado.csv` y sale solo si el guardado tiene éxito. Si falla, mantiene el inventario y el menú para reintentar.
 0. **Salir sin guardar:** termina sin exportar los cambios del inventario. La carga puede haber generado ya `errores.csv`.
 
 Las opciones de gestión, auditoría y guardado requieren cargar primero un inventario. Una carga con todos los registros rechazados deja una lista vacía que el programa considera cargada.
+
+El submenú de la opción 3 ofrece:
+
+| Opción | Operación |
+|---|---|
+| 1 | Mostrar la auditoría en consola, sin generar archivos. |
+| 2 | Generar el informe TXT y los dos CSV de auditoría. |
+| 3 | Generar los tres gráficos PNG. |
+| 4 | Generar informes y gráficos. |
+| 0 | Volver al menú principal. |
+
+Cada operación calcula una única auditoría con el inventario actual en memoria y la fecha de referencia del programa. No vuelve a cargar el CSV. Las opciones inválidas se vuelven a solicitar; los errores de cálculo o generación muestran un aviso y permiten reintentar. En la generación conjunta se intenta generar gráficos aunque fallen los informes. Una interrupción por teclado o fin de entrada en este submenú vuelve al menú principal.
 
 ## 6. Configuración y contrato CSV
 
@@ -175,7 +189,7 @@ Validaciones implementadas:
 
 ### Cálculos implementados en `informes.py`
 
-Estas funciones todavía no están integradas en una auditoría ejecutable desde el menú:
+Las funciones auxiliares se integran en `calcular_auditoria()` y se presentan mediante `mostrar_auditoria()` desde el menú 3:
 
 - Conteo de equipos por campo y conversión de versiones numéricas a tuplas.
 - Selección de sistemas obsoletos según `SO_OBSOLETOS`: Windows 7 y 8.1, macOS anterior a 12 y Ubuntu/Ubuntu Server hasta 18.04 inclusive. Son reglas configuradas del proyecto.
@@ -183,15 +197,17 @@ Estas funciones todavía no están integradas en una auditoría ejecutable desde
 - Selección de garantías entre la fecha de referencia y 90 días después, incluidos ambos extremos.
 - Antigüedad en años, media por departamento y coste por departamento, con redondeo de los resultados agregados. El coste utiliza `Decimal` para sumar los precios.
 
-### Pendientes
+### Informes y gráficos implementados
 
-Las siguientes funciones siguen lanzando `NotImplementedError`:
+El informe TXT incluye la fecha de referencia, distribuciones por departamento y estado, antigüedad media, costes y los equipos con SO obsoleto o garantía próxima. Los dos CSV exportan estos últimos grupos con las 13 columnas del contrato, en orden y sin metadatos internos.
 
-- `calcular_auditoria()` y `mostrar_auditoria()`.
-- `escribir_informe_auditoria()` y `generar_informes()`.
-- `generar_grafico_barras()` y `generar_graficos()`.
+Los PNG muestran equipos por departamento, equipos por estado y antigüedad media por departamento. Incluyen títulos, ejes, valores y etiquetas largas divididas en líneas. Si el inventario está vacío, los informes indican la ausencia de datos, los CSV conservan la cabecera y los gráficos muestran un mensaje.
 
-Por tanto, todavía no se generan informes de auditoría ni gráficos desde el programa.
+Los informes TXT/CSV y gráficos PNG se escriben primero en archivos temporales y sustituyen cada destino solo al completar su escritura. Un fallo conserva el archivo anterior de ese destino y los datos en memoria. La operación conjunta puede producir resultados parciales: las salidas que se completan correctamente se conservan aunque falle otra.
+
+### Estado pendiente
+
+Las funciones previstas de auditoría, informes y gráficos ya están implementadas; no quedan bloques `NotImplementedError` en `informes.py`. Las reglas de obsolescencia siguen siendo las reglas configuradas del proyecto y requieren mantenimiento cuando cambien los criterios adoptados.
 
 ## 8. Archivos de salida
 
@@ -199,11 +215,34 @@ Por tanto, todavía no se generan informes de auditoría ni gráficos desde el p
 |---|---|
 | `errores.csv` | Se regenera tras una lectura correcta, incluso sin rechazados. Incluye las 13 columnas más `linea_csv`, `codigo_error` y `motivo`. |
 | `inventario_actualizado.csv` | Se genera al guardar el inventario. |
-| `informe_auditoria.txt` | Configurado; generación pendiente. |
-| `equipos_so_obsoleto.csv` | Configurado; generación pendiente. |
-| `garantias_proximas.csv` | Configurado; generación pendiente. |
-| `grafico_departamentos.png` | Configurado; generación pendiente. |
-| `grafico_estados.png` | Configurado; generación pendiente. |
-| `grafico_antiguedad.png` | Configurado; generación pendiente. |
+| `informe_auditoria.txt` | Auditoría por secciones y fecha de referencia; submenú 2 o 4. |
+| `equipos_so_obsoleto.csv` | Equipos con SO obsoleto; submenú 2 o 4. |
+| `garantias_proximas.csv` | Equipos con garantía próxima; submenú 2 o 4. |
+| `grafico_departamentos.png` | Equipos por departamento; submenú 3 o 4. |
+| `grafico_estados.png` | Equipos por estado; submenú 3 o 4. |
+| `grafico_antiguedad.png` | Antigüedad media por departamento; submenú 3 o 4. |
 
 Las salidas CSV implementadas crean el directorio de destino si falta y sobrescriben el archivo de salida anterior. Una lectura fallida no actualiza `errores.csv`. El contenido generado de `salida/` está excluido de Git; `.gitkeep` conserva la carpeta en el repositorio.
+
+## 9. Pruebas automatizadas
+
+Con el entorno Conda o `.venv` activado y las dependencias instaladas, ejecutar desde la carpeta principal:
+
+```bash
+python -m unittest discover -v
+```
+
+En PowerShell también se puede utilizar directamente el Python del entorno local:
+
+```powershell
+.\.venv\Scripts\python.exe -B -m unittest discover -v
+```
+
+- `test_informes.py`: indicadores, fechas, límites, redondeos, exportación y lectura de TXT/CSV, PNG, datos vacíos y errores de escritura. Utiliza directorios temporales y backend Agg, sin abrir ventanas ni modificar los archivos de datos.
+- `test_main.py`: navegación del menú 3, sus cuatro operaciones, volver, opciones inválidas, inventario no cargado o vacío, errores y reintentos. Utiliza mocks para entradas, carga, cálculo y exportaciones; no lee ni escribe datos reales.
+
+Comprobación de espacios y formato del diff:
+
+```bash
+git diff --check
+```

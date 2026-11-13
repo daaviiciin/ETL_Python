@@ -83,6 +83,35 @@ def menu_gestion(inventario):
             print("Esta opción aún no está implementada.")
 
 
+def mostrar_menu_analisis():
+    """Muestra las operaciones de auditoría y exportación disponibles."""
+    print("\n--- AUDITORÍA, INFORMES Y GRÁFICOS ---")
+    print("1. Mostrar auditoría")
+    print("2. Generar informes")
+    print("3. Generar gráficos")
+    print("4. Generar informes y gráficos")
+    print("0. Volver")
+
+
+def menu_analisis(inventario, fecha_referencia):
+    """Mantiene el submenú activo usando el inventario ya cargado."""
+    if inventario is None:
+        print("Primero carga un inventario (opción 1).")
+        return
+    while True:
+        mostrar_menu_analisis()
+        try:
+            opcion = pedir_opcion(("1", "2", "3", "4", "0"))
+            if opcion == "0":
+                return
+            acciones.accion_analisis(inventario, fecha_referencia, opcion)
+        except (EOFError, KeyboardInterrupt):
+            print("\nVolviendo al menú principal.")
+            return
+        except Exception as error:
+            print(f"No se pudo completar la operación: {error}. Puedes reintentar.")
+
+
 def main():
     """
     Punto de entrada. El inventario y la fecha de referencia son variables
@@ -115,7 +144,7 @@ def main():
             elif opcion == "2":
                 menu_gestion(inventario)
             elif opcion == "3":
-                acciones.accion_auditoria(inventario, fecha_referencia)
+                menu_analisis(inventario, fecha_referencia)
             elif opcion == "4":
                 if not acciones.accion_guardar(inventario):
                     print("No se ha guardado el inventario. Puedes reintentar; los datos siguen en memoria.")

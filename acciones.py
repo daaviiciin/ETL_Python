@@ -74,6 +74,30 @@ def accion_guardar(inventario):
     return gestion.guardar_inventario(inventario)
 
 
+def accion_analisis(inventario, fecha_referencia, opcion):
+    """Ejecuta la operación elegida sobre una única auditoría en memoria."""
+    auditoria = informes.calcular_auditoria(inventario, fecha_referencia)
+    if opcion == "1":
+        informes.mostrar_auditoria(auditoria)
+        return True
+
+    exito = True
+    operaciones = []
+    if opcion in ("2", "4"):
+        operaciones.append(("informes", informes.generar_informes, (auditoria, fecha_referencia)))
+    if opcion in ("3", "4"):
+        operaciones.append(("gráficos", informes.generar_graficos, (auditoria,)))
+    for nombre, funcion, argumentos in operaciones:
+        try:
+            if not funcion(*argumentos):
+                print(f"No se han generado todos los {nombre}. Puedes reintentar.")
+                exito = False
+        except Exception as error:
+            print(f"Error al generar {nombre}: {error}. Puedes reintentar.")
+            exito = False
+    return exito
+
+
 # ---------------------------------------------------------------------------
 # Submenú de gestión
 # inventario es la MISMA lista que tiene main(): si una función le hace
