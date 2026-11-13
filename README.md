@@ -1,129 +1,209 @@
-
-# IT Asset Manager
+﻿# IT Asset Manager
 
 ## 1. Descripción del proyecto
 
-IT Asset Manager es una aplicación desarrollada en Python para la gestión y el análisis de un inventario de equipos informáticos.
+IT Asset Manager es una aplicación de consola desarrollada en Python para gestionar y analizar un inventario de equipos informáticos mediante archivos CSV. Permite cargar y validar registros, gestionar equipos y guardar el inventario actualizado. Los cálculos de análisis están parcialmente implementados; la auditoría completa, los informes y los gráficos siguen pendientes.
 
-El proyecto permite trabajar con información de los equipos mediante archivos CSV y está diseñado para facilitar su gestión, validación y análisis.
+## 2. Tecnologías y dependencias
 
-## 2. Tecnologías utilizadas
+- Python 3.12, definido en `environment.yml`.
+- Git y GitHub para el control de versiones y la colaboración.
+- Biblioteca estándar de Python: `csv`, `pathlib`, `datetime`, `re`, `math` y `decimal`.
+- Dependencias declaradas: pandas 3.1 y matplotlib 3.11 en Conda; `pandas>=3.1,<3.2` y `matplotlib>=3.11,<3.12` en pip. El código actual no utiliza pandas ni matplotlib; la generación de gráficos está pendiente.
 
-- Python 3.
-- Git para el control de versiones.
-- GitHub para el almacenamiento del proyecto y el trabajo colaborativo.
-- pathlib para la gestión de rutas y directorios.
-- matplotlib para la generación de gráficos.
+Se puede utilizar cualquier editor o IDE, como PyCharm o Visual Studio Code.
 
-El proyecto no depende de un entorno de desarrollo específico. Cada integrante puede utilizar el editor o IDE que prefiera, como PyCharm o Visual Studio Code.
-
-## 3. Estructura del proyecto
-
-La estructura prevista del proyecto es la siguiente:
+## 3. Estructura real del proyecto
 
 ```text
-IT_ASSET_MANAGER/
-│
+ETL_Python/
+├── .gitignore
+├── README.md
+├── environment.yml
+├── requirements.txt
 ├── main.py
+├── acciones.py
 ├── config.py
 ├── carga_validacion.py
 ├── gestion.py
 ├── informes.py
-├── requirements.txt
-├── README.md
-│
 ├── datos/
 │   ├── inventario.csv
 │   └── inventario_prueba.csv
-│
-├── salida/
-│
-└── docs/
-    └── memoria.pdf
+└── salida/
+    └── .gitkeep
 ```
 
-## 4. Configuración del proyecto
+Los directorios locales `.venv/`, `__pycache__/` y los archivos del editor no forman parte del código entregable. No hay una carpeta `docs/` ni una memoria PDF en la estructura revisada.
 
-El proyecto utiliza rutas relativas para localizar sus carpetas y archivos.
+| Módulo | Responsabilidad |
+|---|---|
+| `main.py` | Menú principal, submenú de gestión y estado del inventario en memoria. |
+| `acciones.py` | Entrada de datos por consola y llamadas a los módulos de lógica. |
+| `config.py` | Rutas, contrato CSV, valores permitidos y umbrales. |
+| `carga_validacion.py` | Lectura, validación, resumen de carga y escritura genérica de CSV. |
+| `gestion.py` | Altas, bajas lógicas, búsquedas, modificaciones, listados y guardado. |
+| `informes.py` | Cálculos de análisis implementados y funciones de informes pendientes. |
 
-En el módulo `config.py` se centralizan las rutas y configuraciones generales.
+## 4. Instalación
 
-Actualmente se han definido las siguientes constantes:
+### Obtener el proyecto
 
-- `BASE_DIR`: carpeta principal del proyecto.
-- `DATA_DIR`: carpeta donde se almacenan los archivos CSV.
-- `OUTPUT_DIR`: carpeta donde se guardarán los resultados generados.
-- `INVENTORY_FILE`: ruta del inventario principal.
-- `TEST_FILE`: ruta del inventario de pruebas.
-- `UPDATED_FILE`: ruta donde se guardará el inventario actualizado.
-
-Esta configuración permite ejecutar el proyecto desde diferentes ubicaciones y ordenadores sin modificar manualmente las rutas.
-
-## 5. Entorno virtual y dependencias
-
-El proyecto utiliza un entorno virtual de Python (`.venv`) para mantener aisladas las dependencias.
-
-Cada integrante del grupo y cualquier persona que descargue el proyecto deberá crear su propio entorno virtual.
-
-La carpeta `.venv` no se incluirá en el repositorio de GitHub, ya que cada usuario tendrá su propia configuración local.
-
-Las dependencias necesarias se especificarán en el archivo `requirements.txt`.
-
-## 6. Instalación y configuración
-
-### Requisitos previos
-
-- Tener instalado Python 3.
-- Tener Git instalado si se desea clonar el repositorio.
-
-### Clonar el repositorio
+Se necesita Git para clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/daaviiciin/ETL_Python.git
+cd ETL_Python
 ```
 
-Entrar en la carpeta del proyecto:
+Las funcionalidades disponibles dependen de la rama utilizada. Esta documentación describe los archivos de la copia de trabajo revisada, no garantiza que todas las ramas tengan el mismo desarrollo.
+
+### Opción A: Conda
+
+Con Conda instalado, ejecutar desde la carpeta del proyecto:
 
 ```bash
-cd IT_ASSET_MANAGER
+conda env create -f environment.yml
+conda activate it-asset-manager
 ```
 
-### Crear el entorno virtual
+El archivo define el entorno `it-asset-manager`, el canal `defaults`, Python 3.12, pandas 3.1 y matplotlib 3.11. `environment.yml` se validó en Windows con `conda env create --dry-run -f environment.yml`, comprobando la resolución del entorno sin instalarlo.
 
-En Windows:
+Para salir del entorno:
+
+```bash
+conda deactivate
+```
+
+### Opción B: pip y entorno virtual
+
+Con Python 3.12 instalado:
 
 ```bash
 python -m venv .venv
 ```
 
-### Activar el entorno virtual
+Activar en PowerShell de Windows:
 
-En Windows:
-
-```bash
-.venv\Scripts\activate
+```powershell
+.\.venv\Scripts\Activate.ps1
 ```
 
-### Instalar las dependencias
+En CMD de Windows:
 
-```bash
-pip install -r requirements.txt
+```bat
+.venv\Scripts\activate.bat
 ```
 
-## 7. Ejecución del programa
+En Linux o macOS:
 
-Una vez configurado el entorno virtual e instaladas las dependencias, el programa se ejecutará desde la carpeta principal mediante:
+```bash
+source .venv/bin/activate
+```
+
+Instalar las dependencias declaradas:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Cada persona debe crear su propio entorno; `.venv/` está excluido de Git. Esta alternativa instala dependencias en el entorno virtual y no requiere crear también el entorno Conda.
+
+## 5. Ejecución y uso
+
+Con el entorno elegido activado, ejecutar desde la carpeta principal:
 
 ```bash
 python main.py
 ```
 
-Las instrucciones definitivas de funcionamiento se completarán cuando esté desarrollado el menú principal.
+El menú ofrece:
 
-## 8. Estado actual del desarrollo
+1. **Cargar y validar inventario:** Enter selecciona `datos/inventario.csv`. También se puede indicar `datos/inventario_prueba.csv` u otra ruta. Las rutas relativas introducidas se interpretan desde la carpeta del proyecto. Una carga fallida conserva el inventario anterior.
+2. **Gestión del inventario:** altas, bajas lógicas, búsquedas, modificaciones y listado completo; `0` vuelve al menú principal.
+3. **Auditoría, informes y gráficos:** opción todavía pendiente de integración. Muestra el aviso de función no implementada y vuelve al menú.
+4. **Guardar y salir:** escribe `salida/inventario_actualizado.csv` y sale solo si el guardado tiene éxito. Si falla, mantiene el inventario y el menú para reintentar.
+0. **Salir sin guardar:** termina sin exportar los cambios del inventario. La carga puede haber generado ya `errores.csv`.
 
-Actualmente se ha iniciado la configuración del proyecto y se ha creado el módulo `config.py`, donde se están centralizando las rutas y configuraciones generales.
+Las opciones de gestión, auditoría y guardado requieren cargar primero un inventario. Una carga con todos los registros rechazados deja una lista vacía que el programa considera cargada.
 
-También se ha iniciado la documentación mediante este archivo README.
+## 6. Configuración y contrato CSV
 
-El resto de módulos y funcionalidades se desarrollarán progresivamente.
+Las rutas se construyen a partir de la ubicación de `config.py`, sin depender de la carpeta desde la que se lance Python:
+
+- `BASE_DIR`: carpeta principal del proyecto.
+- `DATA_DIR`: carpeta `datos/`.
+- `OUTPUT_DIR`: carpeta `salida/`.
+- `INVENTORY_FILE` y `TEST_FILE`: archivos de entrada predeterminados.
+- `UPDATED_FILE`: destino del inventario actualizado.
+- Otras constantes definen las salidas de errores, informes y gráficos.
+
+La cabecera debe contener estas 13 columnas, mostradas en su orden de exportación:
+
+```text
+id_equipo,hostname,tipo,marca_modelo,sistema_operativo,version_so,direccion_ip,departamento,usuario_asignado,fecha_compra,fin_garantia,estado,precio_eur
+```
+
+La lectura utiliza coma y UTF-8 con o sin BOM; las salidas usan UTF-8. Las fechas y los precios permanecen como texto dentro de los diccionarios del inventario.
+
+Validaciones implementadas:
+
+- Archivo existente, con cabecera, registros y todas las columnas obligatorias.
+- ID, hostname, sistema operativo y departamento no vacíos.
+- Tipo: `portatil`, `sobremesa`, `servidor` o `movil`.
+- IP opcional; si se informa, debe tener cuatro grupos entre 0 y 255 y ser única entre los registros aceptados.
+- ID único entre los registros aceptados. La validación de duplicados compara el texto exacto.
+- Fechas existentes con formato `AAAA-MM-DD`; fin de garantía estrictamente posterior a la compra.
+- Estado: `activo`, `almacen`, `reparacion` o `baja`.
+- Precio finito mayor que cero, con punto decimal opcional; no admite coma decimal ni notación científica.
+
+`marca_modelo`, `version_so` y `usuario_asignado` deben existir como columnas, pero pueden estar vacíos. Se informa únicamente del primer error de cada registro. Una fila rechazada no bloquea otra posterior con el mismo ID o IP. Las columnas adicionales no se exportan en las salidas del contrato.
+
+`FECHA_REFERENCIA_FIJA = None` selecciona la fecha del sistema una vez al arrancar; si se configura una fecha fija, se utiliza esa. Los cálculos de análisis reciben la fecha como parámetro. Los umbrales actuales son 90 días para garantías, 365,25 días por año y dos decimales.
+
+## 7. Funcionalidades implementadas y pendientes
+
+### Implementadas y accesibles desde el menú
+
+- Carga y validación CSV, separación de válidos y rechazados y resumen por regla.
+- Alta de equipos reutilizando la validación de carga, sin añadir registros inválidos.
+- Baja lógica: cambia el estado a `baja` sin eliminar el equipo.
+- Búsquedas exactas sin distinguir mayúsculas por ID, hostname, departamento o tipo.
+- Modificación exclusiva de estado, departamento y usuario asignado; valida el estado y rechaza departamentos vacíos.
+- Listado en tabla y manejo de listas vacías.
+- Guardado con las 13 columnas en orden, protección de `INVENTORY_FILE` y aviso de errores sin anunciar éxito falso.
+
+### Cálculos implementados en `informes.py`
+
+Estas funciones todavía no están integradas en una auditoría ejecutable desde el menú:
+
+- Conteo de equipos por campo y conversión de versiones numéricas a tuplas.
+- Selección de sistemas obsoletos según `SO_OBSOLETOS`: Windows 7 y 8.1, macOS anterior a 12 y Ubuntu/Ubuntu Server hasta 18.04 inclusive. Son reglas configuradas del proyecto.
+- Las versiones no numéricas no se clasifican como obsoletas.
+- Selección de garantías entre la fecha de referencia y 90 días después, incluidos ambos extremos.
+- Antigüedad en años, media por departamento y coste por departamento, con redondeo de los resultados agregados. El coste utiliza `Decimal` para sumar los precios.
+
+### Pendientes
+
+Las siguientes funciones siguen lanzando `NotImplementedError`:
+
+- `calcular_auditoria()` y `mostrar_auditoria()`.
+- `escribir_informe_auditoria()` y `generar_informes()`.
+- `generar_grafico_barras()` y `generar_graficos()`.
+
+Por tanto, todavía no se generan informes de auditoría ni gráficos desde el programa.
+
+## 8. Archivos de salida
+
+| Archivo en `salida/` | Estado |
+|---|---|
+| `errores.csv` | Se regenera tras una lectura correcta, incluso sin rechazados. Incluye las 13 columnas más `linea_csv`, `codigo_error` y `motivo`. |
+| `inventario_actualizado.csv` | Se genera al guardar el inventario. |
+| `informe_auditoria.txt` | Configurado; generación pendiente. |
+| `equipos_so_obsoleto.csv` | Configurado; generación pendiente. |
+| `garantias_proximas.csv` | Configurado; generación pendiente. |
+| `grafico_departamentos.png` | Configurado; generación pendiente. |
+| `grafico_estados.png` | Configurado; generación pendiente. |
+| `grafico_antiguedad.png` | Configurado; generación pendiente. |
+
+Las salidas CSV implementadas crean el directorio de destino si falta y sobrescriben el archivo de salida anterior. Una lectura fallida no actualiza `errores.csv`. El contenido generado de `salida/` está excluido de Git; `.gitkeep` conserva la carpeta en el repositorio.
