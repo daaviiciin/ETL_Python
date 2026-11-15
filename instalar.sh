@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ===========================================================================
 #  IT Asset Manager - instalación y arranque en Linux / macOS
-#  Crea el entorno virtual .venv, instala requirements.txt y lanza src/main.py.
+#  Crea el entorno virtual .venv, instala requirements.txt y lanza main.py.
 #  Uso:  bash instalar.sh
 # ===========================================================================
 set -e
@@ -52,6 +52,6 @@ echo "Dependencias instaladas."
 echo
 
 # --- 5. Arrancar el programa -------------------------------------------------
-# El código está en src/; se lanza desde la raíz y config.py calcula las
+# Se lanza desde la carpeta del proyecto y config.py calcula las
 # rutas de datos/ y salida/ por su cuenta.
-"$VENV_PY" src/main.py
+"$VENV_PY" main.py

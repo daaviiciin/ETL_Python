@@ -19,10 +19,10 @@ FECHA_REFERENCIA_FIJA = None
 # ---------------------------------------------------------------------------
 # Rutas (relativas a la carpeta del proyecto, funcionan en cualquier equipo)
 # ---------------------------------------------------------------------------
-# Este fichero está en src/, así que la carpeta del proyecto es la de arriba:
-# .parent es src/ y .parent.parent es la raíz, donde están datos/ y salida/.
+# Este fichero está en la raíz del proyecto, junto a datos/ y salida/:
+# .parent es la carpeta que lo contiene, es decir, la carpeta del proyecto.
 # Como se calcula a partir de __file__, da igual desde qué carpeta se lance.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "datos"
 OUTPUT_DIR = BASE_DIR / "salida"
 

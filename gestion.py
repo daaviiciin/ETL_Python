@@ -172,7 +172,9 @@ def mostrar_equipos(equipos):
     print("-" * len(cabecera))
     for equipo in equipos:
         print("  ".join((equipo.get(c) or "").ljust(anchos[c]) for c in columnas))
-    print(f"Total: {len(equipos)} equipos")
+    # Singular o plural según el número, para no escribir "1 equipos".
+    palabra = "equipo" if len(equipos) == 1 else "equipos"
+    print(f"Total: {len(equipos)} {palabra}")
 
 
 def guardar_inventario(inventario):

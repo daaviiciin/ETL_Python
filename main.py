@@ -3,7 +3,7 @@ Programa principal de IT Asset Manager.
 
 Responsabilidad: SOLO los menús. Muestra las opciones, lee la elección del
 usuario y llama a la función correspondiente de acciones.py.
-Se ejecuta desde la carpeta del proyecto con:  python src/main.py
+Se ejecuta desde la carpeta del proyecto con:  python main.py
 """
 
 # main está arriba del todo en la "escalera" de dependencias: solo habla con
@@ -120,7 +120,7 @@ def main():
     print("Hasta luego.")
 
 
-# Solo arranca el menú si ejecutamos "python src/main.py" directamente.
+# Solo arranca el menú si ejecutamos "python main.py" directamente.
 # Si otro fichero hiciera "import main", el menú no se lanzaría solo.
 if __name__ == "__main__":
     main()

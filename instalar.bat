@@ -1,7 +1,7 @@
 @echo off
 REM ===========================================================================
 REM  IT Asset Manager - instalación y arranque en Windows
-REM  Crea el entorno virtual .venv, instala requirements.txt y lanza src\main.py.
+REM  Crea el entorno virtual .venv, instala requirements.txt y lanza main.py.
 REM  Uso: doble clic en este fichero, o "instalar.bat" desde una terminal.
 REM ===========================================================================
 setlocal
@@ -48,9 +48,9 @@ echo Dependencias instaladas.
 echo.
 
 REM --- 5. Arrancar el programa -----------------------------------------------
-REM El código está en src\; se lanza desde la raíz y config.py calcula las
+REM Se lanza desde la carpeta del proyecto y config.py calcula las
 REM rutas de datos\ y salida\ por su cuenta.
-".venv\Scripts\python.exe" src\main.py
+".venv\Scripts\python.exe" main.py
 pause
 exit /b 0
 

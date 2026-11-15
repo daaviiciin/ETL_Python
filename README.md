@@ -4,9 +4,9 @@ Programa de consola en Python que carga el inventario informático de la empresa
 
 **Integrantes del grupo**
 
-- Integrante 1: _(nombre y apellidos)_
-- Integrante 2: _(nombre y apellidos)_
-- Integrante 3: _(nombre y apellidos)_
+- David Rojas
+- Estefanía Correa
+- David Moreno
 
 ---
 
@@ -52,10 +52,20 @@ source .venv/bin/activate       # Linux / macOS
 pip install -r requirements.txt
 
 # 5. Ejecutar
-python src/main.py
+python main.py
 ```
 
-El programa se ejecuta con `python src/main.py` desde la carpeta del proyecto. Las rutas de `datos/` y `salida/` se calculan a partir de dónde está `src/config.py`, así que funciona en cualquier ordenador, e incluso lanzado desde otra carpeta, sin cambiar nada.
+### Opción C: entorno Conda
+
+Para quien use Anaconda o Miniconda, `environment.yml` define el entorno `it-asset-manager` con las mismas versiones que `requirements.txt` (canal `conda-forge`):
+
+```bash
+conda env create -f environment.yml
+conda activate it-asset-manager
+python main.py
+```
+
+El programa se ejecuta con `python main.py` desde la carpeta del proyecto. Las rutas de `datos/` y `salida/` se calculan a partir de dónde está `config.py`, así que funciona en cualquier ordenador, e incluso lanzado desde otra carpeta, sin cambiar nada.
 
 ---
 
@@ -112,7 +122,7 @@ Todos se guardan en `salida/`. La carpeta se crea si no existe y los ficheros se
 
 ### Cómo comprobar los resultados con una fecha fija
 
-Por defecto, los cálculos usan la fecha de hoy (`date.today()`). Para repetirlos con una fecha concreta, edita `src/config.py`:
+Por defecto, los cálculos usan la fecha de hoy (`date.today()`). Para repetirlos con una fecha concreta, edita `config.py`:
 
 ```python
 FECHA_REFERENCIA_FIJA = date(2026, 11, 2)   # en vez de None
@@ -126,14 +136,14 @@ Después ejecuta el programa y carga `datos/inventario_prueba.csv` (opción 1) y
 
 ```text
 it_asset_manager/
-├── src/                        Código del programa
-│   ├── main.py                 Programa principal: solo los menús
-│   ├── acciones.py             Una función por opción del menú: pide los datos y llama a la lógica
-│   ├── carga_validacion.py     Lectura del CSV, reglas de validación, errores.csv y resumen de carga
-│   ├── gestion.py              Altas, bajas, búsquedas, modificaciones, listados y guardado
-│   ├── informes.py             Auditoría (con pandas), informes TXT/CSV y gráficos (matplotlib)
-│   └── config.py               Todas las constantes: rutas, contrato de datos, umbrales, SO obsoletos
-├── requirements.txt            Dependencias de terceros con su versión
+├── main.py                     Programa principal: solo los menús
+├── acciones.py                 Una función por opción del menú: pide los datos y llama a la lógica
+├── carga_validacion.py         Lectura del CSV, reglas de validación, errores.csv y resumen de carga
+├── gestion.py                  Altas, bajas, búsquedas, modificaciones, listados y guardado
+├── informes.py                 Auditoría (con pandas), informes TXT/CSV y gráficos (matplotlib)
+├── config.py                   Todas las constantes: rutas, contrato de datos, umbrales, SO obsoletos
+├── requirements.txt            Dependencias de terceros con su versión (pip)
+├── environment.yml             Las mismas dependencias para Conda
 ├── instalar.bat                Instalación y arranque en Windows
 ├── instalar.sh                 Instalación y arranque en Linux / macOS
 ├── README.md
@@ -142,10 +152,8 @@ it_asset_manager/
 │   └── inventario_prueba.csv
 ├── salida/                     Se genera al ejecutar (se entrega vacía)
 └── docs/
-    └── memoria.pdf
+    └── ETL_Python.pdf          Memoria técnica
 ```
-
-El código Python está en `src/`, separado de lo que sirve para instalar y arrancar (`requirements.txt`, `instalar.bat`, `instalar.sh`), de los datos y de la documentación, que se quedan en la raíz.
 
 ### Responsabilidad de cada módulo
 
@@ -215,5 +223,5 @@ Cada fila se comprueba en el orden de las columnas del contrato. Si incumple var
 - Los cambios de la sesión solo se guardan con la opción **4**. Salir con **0** los descarta.
 - Solo se pueden modificar `estado`, `departamento` y `usuario_asignado`. Un equipo no se puede borrar físicamente, solo darse de baja.
 - Si un fichero de `salida/` está abierto en otro programa (por ejemplo, Excel), no se puede sobrescribir. El programa avisa y sigue funcionando. En el caso de "Guardar y salir", no se cierra hasta que se pueda guardar.
-- La fecha de referencia fija se cambia editando `src/config.py`, no desde el menú.
+- La fecha de referencia fija se cambia editando `config.py`, no desde el menú.
 - Los informes muestran los números con punto decimal (`1102.91`).

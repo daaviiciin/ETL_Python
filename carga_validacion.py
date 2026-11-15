@@ -38,7 +38,8 @@ def leer_inventario(ruta):
 
     # 1) ¿Existe? is_file() también descarta que la ruta sea una carpeta.
     if not ruta.is_file():
-        return [], f"No se encuentra el fichero: {ruta}"
+        # Ruta corta (relativa al proyecto) para que el mensaje se lea bien.
+        return [], f"No se encuentra el fichero: {ruta_para_mostrar(ruta)}"
 
     try:
         # newline="" es lo que recomienda el módulo csv: así él mismo
