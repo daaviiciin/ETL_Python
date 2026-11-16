@@ -17,6 +17,9 @@ Programa de consola en Python que carga el inventario informático de la empresa
 | Python | **3.11 o superior** (probado con 3.13). Lo exige pandas 3 |
 | matplotlib | 3.11.2 (en `requirements.txt`) |
 | pandas | 3.1.1 (en `requirements.txt`) |
+| numpy | 2.5.4 (la instalan pandas y matplotlib; fijada en `requirements.txt`) |
+
+`requirements.txt` fija la versión exacta de **todas** las dependencias, también las que pandas y matplotlib instalan por su cuenta, para que cualquier instalación reproduzca exactamente el entorno con el que se ha probado el programa.
 
 El resto de módulos (`csv`, `datetime`, `pathlib`, `re`…) son de la biblioteca estándar y no hay que instalarlos.
 
@@ -57,7 +60,7 @@ python main.py
 
 ### Opción C: entorno Conda
 
-Para quien use Anaconda o Miniconda, `environment.yml` define el entorno `it-asset-manager` con las mismas versiones que `requirements.txt` (canal `conda-forge`):
+Conda **no es necesario**: las opciones A y B solo necesitan Python. Para quien ya use Anaconda, Miniconda o Miniforge, `environment.yml` define el entorno `it-asset-manager` con Python 3.13 y las mismas versiones de pandas, matplotlib y numpy que `requirements.txt` (canal `conda-forge`):
 
 ```bash
 conda env create -f environment.yml
