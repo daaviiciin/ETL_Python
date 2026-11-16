@@ -38,8 +38,8 @@ Se puede ejecutar tantas veces como se quiera. Si el entorno ya existe, no se vu
 ### Opción B: paso a paso
 
 ```bash
-# 1. Entrar en la carpeta del proyecto
-cd it_asset_manager
+# 1. Entrar en la carpeta del proyecto (la que sale al descomprimir el zip)
+cd ETL_Python
 
 # 2. Crear el entorno virtual
 python -m venv .venv
@@ -135,7 +135,7 @@ Después ejecuta el programa y carga `datos/inventario_prueba.csv` (opción 1) y
 ## 4. Estructura del proyecto
 
 ```text
-it_asset_manager/
+ETL_Python/
 ├── main.py                     Programa principal: solo los menús
 ├── acciones.py                 Una función por opción del menú: pide los datos y llama a la lógica
 ├── carga_validacion.py         Lectura del CSV, reglas de validación, errores.csv y resumen de carga
@@ -152,7 +152,7 @@ it_asset_manager/
 │   └── inventario_prueba.csv
 ├── salida/                     Se genera al ejecutar (se entrega vacía)
 └── docs/
-    └── ETL_Python.pdf          Memoria técnica
+    └── memoria.pdf             Memoria técnica
 ```
 
 ### Responsabilidad de cada módulo
